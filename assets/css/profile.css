@@ -8,12 +8,12 @@ body {
   background-color: #f2f6fc;
   color: #69707a;
 }
-
-.switchMode {
-  background: -webkit-linear-gradient(to right, #434343, #000000);
-  background: linear-gradient(to right, #434343, #000000);
-  color: var(--color-white);
+a {
+  text-decoration: none;
+  color: #fff; 
 }
+
+
 .toggle {
   color: #fff !important;
 }
@@ -43,7 +43,8 @@ body {
   100%{background-position:0% 94%}
 }
 .switchMode .card {
-  background-color: #78728d;
+  background: #ddd;
+  color: #000;
 }
 
 .switchMode .card-header, label {
@@ -53,11 +54,24 @@ body {
 nav {
   position: fixed !important;
 }
+.switchMode .main{
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
+  color: var(--color-white);
+}
 
 .main {
   z-index: 0;
   position: absolute;
   top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+}
+.row {
+  position: absolute;
+  width: 90%;
   left: 50%;
   transform: translateX(-50%);
 }
