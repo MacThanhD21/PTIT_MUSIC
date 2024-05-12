@@ -1,46 +1,4 @@
-// import { MusicGenData } from "../data/music_gen_data.js";
 
-// Data Musics
-const data = [
-  {
-    id: "371eeb51-5b45-4af4-809c-c2c5c1d3ba84",
-    title: "Island Sun",
-    image_url:
-      "https://cdn1.suno.ai/image_371eeb51-5b45-4af4-809c-c2c5c1d3ba84.png",
-    lyric:
-      "[Verse]\nSippin' on sunshine\nParadise in my eyes\nReggae beats flowin'\nFeelin' so alive\nLaid-back grooves takin' over my soul\nCaribbean vibes\nGonna lose control\n[Verse 2]\nPalm trees swayin'\nOn a sandy shore\nReggae rhythm\nCan't ask for more\nMelodies dance\nLike waves in the sea\nIsland vibes\nSet my spirit free\n[Chorus]\nFeel the Island Sun\nIt's the place to be\nLay back and relax\nFeel the reggae melody\nWith the sand beneath your feet\nAnd the ocean breeze\nLet the music take you\nFar across the seas",
-    audio_url: "https://cdn1.suno.ai/371eeb51-5b45-4af4-809c-c2c5c1d3ba84.mp3",
-    video_url: "https://cdn1.suno.ai/371eeb51-5b45-4af4-809c-c2c5c1d3ba84.mp4",
-    created_at: "2024-04-13T03:28:42.707Z",
-    model_name: "chirp-v3",
-    status: "complete",
-    gpt_description_prompt:
-      "A reggae-infused pop song with laid-back grooves and sunny melodies, bringing the feel-good vibes of the Caribbean islands.",
-    prompt:
-      "[Verse]\nSippin' on sunshine\nParadise in my eyes\nReggae beats flowin'\nFeelin' so alive\nLaid-back grooves takin' over my soul\nCaribbean vibes\nGonna lose control\n\n[Verse 2]\nPalm trees swayin'\nOn a sandy shore\nReggae rhythm\nCan't ask for more\nMelodies dance\nLike waves in the sea\nIsland vibes\nSet my spirit free\n\n[Chorus]\nFeel the Island Sun\nIt's the place to be\nLay back and relax\nFeel the reggae melody\nWith the sand beneath your feet\nAnd the ocean breeze\nLet the music take you\nFar across the seas",
-    type: "gen",
-    tags: "sunny melodies reggae-infused pop laid-back grooves",
-  },
-  {
-    id: "164611ca-4589-4736-83a7-138e00cdbd72",
-    title: "Island Sun",
-    image_url:
-      "https://cdn1.suno.ai/image_164611ca-4589-4736-83a7-138e00cdbd72.png",
-    lyric:
-      "[Verse]\nSippin' on sunshine\nParadise in my eyes\nReggae beats flowin'\nFeelin' so alive\nLaid-back grooves takin' over my soul\nCaribbean vibes\nGonna lose control\n[Verse 2]\nPalm trees swayin'\nOn a sandy shore\nReggae rhythm\nCan't ask for more\nMelodies dance\nLike waves in the sea\nIsland vibes\nSet my spirit free\n[Chorus]\nFeel the Island Sun\nIt's the place to be\nLay back and relax\nFeel the reggae melody\nWith the sand beneath your feet\nAnd the ocean breeze\nLet the music take you\nFar across the seas",
-    audio_url: "https://cdn1.suno.ai/164611ca-4589-4736-83a7-138e00cdbd72.mp3",
-    video_url: "https://cdn1.suno.ai/164611ca-4589-4736-83a7-138e00cdbd72.mp4",
-    created_at: "2024-04-13T03:28:42.707Z",
-    model_name: "chirp-v3",
-    status: "complete",
-    gpt_description_prompt:
-      "A reggae-infused pop song with laid-back grooves and sunny melodies, bringing the feel-good vibes of the Caribbean islands.",
-    prompt:
-      "[Verse]\nSippin' on sunshine\nParadise in my eyes\nReggae beats flowin'\nFeelin' so alive\nLaid-back grooves takin' over my soul\nCaribbean vibes\nGonna lose control\n\n[Verse 2]\nPalm trees swayin'\nOn a sandy shore\nReggae rhythm\nCan't ask for more\nMelodies dance\nLike waves in the sea\nIsland vibes\nSet my spirit free\n\n[Chorus]\nFeel the Island Sun\nIt's the place to be\nLay back and relax\nFeel the reggae melody\nWith the sand beneath your feet\nAnd the ocean breeze\nLet the music take you\nFar across the seas",
-    type: "gen",
-    tags: "sunny melodies reggae-infused pop laid-back grooves",
-  },
-];
 
 // const audio = document.querySelectorAll("audio");
 const input = document.querySelector(".inner-genmusic input");
@@ -84,6 +42,8 @@ async function getMusic() {
   try {
     // Display loading state
     const loadingIndicator = document.querySelector(".loader");
+    const result = document.querySelector(".result");
+
     loadingIndicator.style.display = "block";
     loadingIndicator.style.transition = "all 0.5s ease-in-out";
 
@@ -102,6 +62,7 @@ async function getMusic() {
       if (data[0].status === "streaming" && data[1].status === "streaming") {
         updateUI(data);
         loadingIndicator.style.display = "none";
+        result.style.display = "block";
         break;
       }
       // sleep 5s

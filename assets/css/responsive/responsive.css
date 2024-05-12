@@ -49,6 +49,10 @@
     width: 500px !important;
   }
 
+  #avatar .container__username span {
+    display: none;
+  }
+
   #Top .main .image__slider .image__slider__container {
     height: 250px;
   }

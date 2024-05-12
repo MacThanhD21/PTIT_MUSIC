@@ -1,28 +1,40 @@
 body {
-  /* font-family: 'Poppins', sans-serif; */
   font-size: 16px;
   line-height: 1.5;
-  color: var(--text-main);
-  background-color: var(--color-soft-7);
+  color: #333;
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  border-radius: 0 0 5px 5px;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background: #000;
+  width: 80% !important;
+}
+
+.text-center {
+  font-size: 40px;
 }
 
 .btn-primary, .btn-danger {
   background: none;
 }
 
-.card {
+.card, .navbar-toggler, .navbar-toggler-icon {
   border: none;
-  background: none
+  background: none;
 }
 
-.navbar-toggler {
+.navbar-toggler, .navbar-toggler-icon {
   color: #fff !important;
-}
-
-.navbar-toggler-icon {
-  color: #fff;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -38,12 +50,10 @@ body {
   color: #fff;
 }
 
-
 .navbar {
   padding: 0;
   transition: all 0.3s ease;
 }
-
 
 .navbarFixed .container .inner-logo {
   width: 40px;
@@ -57,62 +67,61 @@ body {
   height: 100%;
 }
 
-/* CSS cho genMusicItem */
-.item {
-  color: #fff;
-  border-radius: 50px;
-  background: linear-gradient(45deg, #dfaec2, #7841d7);
+.genMusicItem, .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 15px;
-  cursor: pointer;
 }
 
-.genMusicItem {
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  /* border: 1px solid #ccc; */
-  border-radius: 5px;
-  margin-bottom: 15px;
+.item {
+  width: 100%;
+  color: #fff;
+  background: darkgray;
+  cursor: pointer;
 }
 
 .genMusicItem__img img {
   max-width: 60%;
   height: auto;
-  border: 2px solid mediumvioletred;
   border-radius: 10px;
 }
 
-.genMusicItem__title {
+.genMusicItem__title, .genMusicItem__author {
   margin: 0 15px;
+}
+
+.genMusicItem__title {
   font-size: 18px;
   font-weight: bold;
 }
 
 .genMusicItem__author {
-  margin: 0 15px;
   font-size: 16px;
 }
 
-.genMusicItem__action {
-  margin-top: 15px;
+.genMusicItem__action button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.result, .loader {
+  display: none;
 }
 
 .loader {
-  display: none;
   width: 50px;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 8px solid;
   border-color: #000 #fff;
   animation: l1 1s infinite;
-  transition: all 0.3s ease;
   margin: auto;
 }
 

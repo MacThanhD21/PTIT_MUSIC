@@ -5,6 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GenMusic</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -18,6 +32,11 @@
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/genmusic.css">
+  <link rel="stylesheet" href="./assets/css/avatar/avatar.css">
+  <link rel="stylesheet" href="./assets/css/mode/mode.css">
+  <link rel="stylesheet" href="./assets/css/navbar/navbar.css">
+  <link rel="stylesheet" href="./assets/css/switchMode/switchMode.css">
+
 
   <!-- Check login -->
   <script>
@@ -42,48 +61,90 @@
 <style>
 </style>
 
-<body>
-  <div class="Container">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/main_logo.png?alt=media&token=03cfebd8-8068-4fc8-8372-d9c1a3b0aeb5"
-            alt="logo" width="50" height="50" class="d-inline-block align-text-top ">
-          <span style="font-family: monospace; font-weight: 700; font-size: 40px" class="ms-3 fs-4">PTIT MUSIC</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/album.html">Play Music</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" onclick="">Logout</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<body class="switchMode">
+  <!-- NAVBAR -->
+  <nav id="navbarFixed">
+    <div class="inner-logo">
+      <a href="index.html">
+        <img src="./assets/images/logo/JPEG/PTIT_MUSIC__3.png" alt="">
+      </a>
+    </div>
+    <!-- FORM: SEARCH -->
+    <div id="search">
+      <input id="searchInput" type="search" placeholder="What do you want to play?"
+        aria-placeholder="Search for music" />
 
+    </div>
+    <!-- End Search -->
+    <ul>
+      <a>
+        <label class="toggle" for="switch">
+          <input onclick="switchMode()" checked="true" id="switch" class="input" type="checkbox" title="switchMode">
+          <div class="icon icon--moon">
+            <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd"
+                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                fill-rule="evenodd"></path>
+            </svg>
+          </div>
+
+          <div class="icon icon--sun">
+            <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z">
+              </path>
+            </svg>
+          </div>
+        </label>
+      </a>
+
+      <a href="javascript:void(0)" id="avatar">
+        <div class="container-avatar">
+          <img id="imgUser" src="" alt="Avatar" />
+        </div>
+        <div class="container__username">
+          <span></span>
+        </div>
+      </a>
+
+      <!-- AVATAR DORPDOWN -->
+      <div class="avatar-dropdown" id="avatarDropdown">
+        <a href="profile.html">
+          <li><span class="far fa-user"></span>Profile</li>
+        </a>
+        <a href="javascript:void(0)" onclick="supportChatMode()">
+          <li><span class="far fa-comment"></span>Support</li>
+        </a>
+        <a href="#">
+          <li><span class="far fa-star"></span>Upgrade Plan</li>
+        </a>
+        <hr />
+        <li class="btnLogout">
+          <button class="logoutBtn">
+            Log out
+          </button>
+        </li>
+      </div>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <div class="Container">
     <!-- GenMusic -->
     <div class="container mt-5">
       <div class="row d-flex flex-column align-items-center justify-content-center bd-highlight mb-3">
         <div class="col-md-8">
           <div class="text-center">
-            <h1 class="mb-4">GenMusic</h1>
+            <h1 class="my-4">GenMusic</h1>
           </div>
         </div>
+        <div class="desc d-flex justify-content-center align-items-center">
+          <p>Fill your mood and we will generate the music for you</p>
+        </div>
+
 
         <div class="col-lg-8 md-6">
-          <div class="inner-genmusic mt-4">
+          <div class="inner-genmusic my-4">
             <div class="container-fluid">
               <form class="d-flex" onsubmit="event.preventDefault();">
                 <input class="form-control me-2" type="search" placeholder="Fill your mood..." aria-label="Search"
@@ -92,14 +153,18 @@
               </form>
             </div>
           </div>
-          <div class="loader mt-3"></div>
-          <div class="result mt-4">
+
+          <div class="loader my-3"></div>
+          <div class="result my-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Generated Music</h5>
+                <h5 class="card-title mx-1">Generated Music</h5>
                 <div class="row genMusicItem">
                   <!-- Item 1 -->
-                  <div class="col-lg-6 col-md-6 item">
+                  <div class="col-lg-6 col-md-6 item item-1">
+                    <div class="desc-title">
+                      Melody 1
+                    </div>
                     <div class="genMusicItem__img">
                       <img src="./assets/images/data_fake/dcc8f9574b7beee051743c8312e1b4f5.jpg" alt="music" width="100"
                         height="100">
@@ -121,7 +186,10 @@
                     </div>
                   </div>
                   <!-- Item 2 -->
-                  <div class="col-lg-6 col-md-6 item">
+                  <div class="col-lg-6 col-md-6 item item-2">
+                    <div class="desc-title">
+                      Melody 2
+                    </div>
                     <div class="genMusicItem__img">
                       <img src="./assets/images/data_fake/dcc8f9574b7beee051743c8312e1b4f5.jpg" alt="music" width="100"
                         height="100">
@@ -150,6 +218,9 @@
       </div>
     </div>
   </div>
+
+
+  <!-- JS Bootraps -->
   <script type="module" src="./assets/js/services/api_genmusic.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -157,6 +228,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
+
+  <!-- JS File -->
+  <script type="module" src="./assets/js/updateInforUser.js"></script>
+  <script src="./assets/js/app.js"></script>
 </body>
 
 </html>
