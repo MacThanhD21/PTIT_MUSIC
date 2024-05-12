@@ -1,0 +1,121 @@
+/* Avatar-User */
+#avatar {
+	/* color: #597B7B; */
+	font-size: 28px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: var(--transition-3s-ease);
+	animation: a1 0.6s ease;
+	margin-left: 20px;
+	border-bottom: 2px solid blanchedalmond;
+  border-radius: 0 0 10px 10px;
+}
+#avatar:hover {
+	transition: var(--transition-3s-ease);
+	color: #f09f33;
+}
+#avatar .container-avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 45px;
+	height: 45px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+#imgUser{
+	border-radius: var(--border-radius-full);
+	object-fit: cover;
+	max-width: 100%;
+}
+#avatar .container__username {
+	margin-left: 10px;
+}
+/* End Avatar-User */
+/* AVATAR DROPDOWN */
+.avatar-dropdown {
+	box-shadow: var(--box-shadow-xlg);
+	background-color: var(--color-white);
+	border-radius: var(--border-radius-mmmd);
+	transition: var(--transition-3s-ease);
+	animation: a2 0.3s ease;
+	position: absolute;
+	overflow: hidden;
+	display: none;
+	padding: 5px;
+	width: 250px;
+	right: 10px;
+	top: 75px;
+}
+
+.avatar-dropdown a li {
+	transition: var(--transition-3s-ease);
+	border-radius: 5px;
+	animation: a2 0.2s ease;
+	padding: 5px 10px;
+	font-size: 20px;
+	color: var(--background-dark-secondary-main);
+	margin: 5px;
+}
+.avatar-dropdown a li:active {
+	transition: var(--transition-3s-ease);
+	background-color: var(--background-primary-main);
+}
+.avatar-dropdown a li span {
+	background-color: transparent !important;
+	margin-right: 5px !important;
+	padding: 0 !important;
+}
+.avatarDropdown {
+	display: block;
+}
+
+.button {
+	width: fit-content;
+	width: -moz-fit-content;
+	display: flex;
+	padding: 1.2em 1rem;
+	cursor: pointer;
+	gap: 0.4rem;
+	font-weight: bold;
+	border-radius: 30px;
+	text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+	background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
+	background-size: 300%;
+	color: #fff;
+	border: none;
+	background-position: left center;
+	box-shadow: 0 30px 10px -20px rgba(0,0,0,.2);
+	transition: background .3s ease;
+}
+.button:hover {
+	background-size: 320%;
+	background-position: right center;
+}
+.btnLogout {
+	margin: 10px;
+	background: #f09f33;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+.btnLogout:hover {
+	background: #ff0000;
+}
+
+/* logoutBtn */
+.logoutBtn {
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition:  0.3s ease;
+}

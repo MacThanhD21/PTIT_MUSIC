@@ -1,0 +1,52 @@
+/* @import url("../css/loader.css"); */
+@import url("../css/navbar/navbar.css");
+@import url("../css/side-bar/side-bar.css");
+/* Main */
+@import url("../css/main/main.css");
+@import url("../css/scroll_tab/scroll_tab.css");
+@import url("../css/mode/mode.css");
+@import url("../css/avatar/avatar.css");
+@import url("../css/image_slider/image_slider.css");
+@import url("../css/section/explore/explore.css");
+@import url("../css/section/creators/creators.css");
+@import url("../css/section/trending/trending.css");
+@import url("../css/section/category/category.css");
+@import url("../css/section/artists/artists.css");
+@import url("../css/switchMode/switchMode.css");
+@import url("../css/responsive/responsive.css");
+@import url("../css/backTop/backTop.css");
+
+
+
+/*========== INPUTS */
+input[type="search"] {
+  font-family: var(--font-family);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 90%;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+textarea {
+  font-family: var(--font-family);
+  background-color: transparent;
+  padding: var(--padding-default\12-18);
+  outline: none;
+  resize: none;
+  border: none;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: var(--color-white);
+  padding: var(--padding-default\12-18);
+  cursor: pointer;
+  outline: none;
+  border: none;
+}

@@ -1,0 +1,246 @@
+#section__trending {
+  margin: 10px auto;
+  position: relative;
+  top: 20px;
+  box-sizing: border-box;
+}
+
+
+/* Relate Music */
+.section-explore {
+  margin: 60px 0 0 0;
+  transition: all 0.5s ease;
+}
+
+/* CARD GRID SLIDER */
+.card-grid-slider {
+  display: flex;
+  padding: 10px 0;
+  overflow-x: auto;
+  align-items: center;
+  scroll-snap-type: x mandatory;
+  max-width: 1600px;
+}
+
+#explore>div:first-child h2 {
+  font-size: 30px;
+}
+
+/* WebKit (Chrome, Safari) */
+.card-grid-slider::-webkit-scrollbar {
+  /* display: none; */
+}
+
+.card-grid-slider::-webkit-scrollbar-thumb {}
+
+.card-grid-slider::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  /* Color of the track */
+}
+
+/* CARD SIMPLE */
+.card-simple {
+  background-color: var(--background-thirdly-main);
+  border-radius: var(--border-radius-mmmd);
+  transition: var(--transition-2s-ease);
+  scroll-snap-align: start;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.card-simple figure {
+  border-radius: var(--border-radius-mmmd);
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+}
+
+.card-simple:hover img {
+  transform: scale(1.1) rotate(2deg);
+  transition: var(--transition-3s-ease);
+}
+
+.card-simple img {
+  transition: var(--transition-3s-ease);
+  border-radius: var(--border-radius-mmmd);
+  height: 100%;
+  width: 100%;
+}
+
+.card-simple h3 {
+  transition: var(--transition-3s-ease);
+  margin-top: 6px;
+  font-size: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-clamp: 1;
+  width: 200px;
+}
+
+.card-simple:hover h3 {
+  color: #EF2519;
+}
+
+.card-simple p a {
+  font-size: 16px;
+  color: var(--color-silver);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-clamp: 1;
+  width: 200px;
+}
+
+/* End Relate Music */
+
+/*========== SECTION TRENDING */
+/* CARD PLAYING HORIZONTAL */
+.card-playing-horizontal {
+  background-color: var(--background-thirdly-main);
+  border-radius: var(--border-radius-mmmd);
+  transition: var(--transition-3s-ease);
+  padding: 10px 20px 10px 10px;
+  display: flex;
+  margin: 0 10px 10px 0;
+  align-items: center;
+  scroll-snap-align: start;
+  justify-content: space-between;
+}
+
+.card-playing-horizontal.playing {
+  /* background: #103178 !important; */
+}
+
+.card-playing-horizontal .card-playing-horizontal-footer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-playing-horizontal .card-playing-horizontal-footer .btnHandleDif {
+  border-radius: var(--border-radius-mmmd);
+  margin-left: 10px;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.card-playing-horizontal .card-playing-horizontal-footer .likeMusic.active {
+  color: var(--color-red);
+}
+
+.card-playing-horizontal figure div {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-playing-horizontal figure div span {
+  background-color: rgba(255, 255, 255, 0.700);
+  border-radius: var(--border-radius-full);
+  -webkit-backdrop-filter: blur(16px);
+  transition: var(--transition-3s-ease);
+  backdrop-filter: blur(16px);
+  position: absolute;
+  padding: 5px;
+  left: 15px;
+  top: 15px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-playing-horizontal figure div span:hover {
+  background-color: rgba(255, 255, 255, 0.90);
+  transition: var(--transition-3s-ease);
+  transform: scale(1.1);
+}
+
+.card-playing-horizontal img {
+  border-radius: var(--border-radius-mmmd);
+  margin-right: 10px;
+  object-fit: cover;
+  height: 56px;
+  width: 56px;
+  max-width: unset;
+
+}
+
+.card-playing-horizontal div h4 {
+  transition: var(--transition-3s-ease);
+  font-size: 22px;
+}
+
+.card-playing-horizontal div h4 span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-clamp: 1;
+  width: 170px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card-playing-horizontal div h4 span:hover {
+  transition: var(--transition-3s-ease);
+}
+
+.card-playing-horizontal div p span {
+  cursor: pointer;
+  font-size: var(--font-size-16);
+  color: var(--color-silver);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  line-clamp: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  width: 130px;
+}
+
+.card-playing-horizontal div p span:hover {
+  transition: var(--transition-3s-ease);
+}
+
+/* CARD GROUP GRID */
+.card-group-grid {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-group-grid .card-category-vertical h4 {
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btnHandleMusic {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 26px;
+}
+
+.btnHandleMusic .fa-pause {
+  display: none;
+}
+
+
+.btnHandleMusic:hover {
+  cursor: pointer;
+}
+
+/*========== END SECTION TRENDING */

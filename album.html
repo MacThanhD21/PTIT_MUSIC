@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- tailwincss -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- tailwincss -->
+
+
+  <!-- IMPORT CSS MAIN -->
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/album.css" />
+  <link rel="stylesheet" href="./assets/css/loader/loader.css" />
+  <link rel="stylesheet" href="./assets/css/main/main.css">
+  <link rel="stylesheet" href="./assets/css/playmusic/playmusic.css">
+  <link rel="stylesheet" href="./assets/css/navbar/navbar.css">
+  <link rel="stylesheet" href="./assets/css/side-bar/side-bar.css">
+  <link rel="stylesheet" href="./assets/css/avatar/avatar.css">
+  <link rel="stylesheet" href="./assets/css/mode/mode.css">
+  <link rel="stylesheet" href="./assets/css/switchMode/switchMode.css">
+  <link rel="stylesheet" href="./assets/css/responsive/responsive.css">
+  <link rel="stylesheet" href="./assets/css/scroll_tab/scroll_tab.css">
+  <link rel="stylesheet" href="./assets/css/noti/noti.css">
+  <link rel="stylesheet" href="./assets/css/backTop/backTop.css">
+  <!-- IMPORT JS -->
+
+  <script>
+    // Kiểm tra xem có cookie chứa token hay không
+    function getCookie(name) {
+      const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+      return cookieValue ? cookieValue.pop() : '';
+    }
+
+    // Lấy giá trị của cookie 'accessToken'
+    const accessToken = getCookie('accessToken');
+
+    // Nếu không có token, chuyển hướng người dùng đến trang đăng nhập
+    if (!accessToken) {
+      window.location.href = '/sign_in.html';
+    }
+  </script>
+
+  <script defer type="module" src="./assets/js/services/api_album_page.js"></script>
+  <script defer type="module" src="./assets/js/services/relateMusic.js"></script>
+
+  <!-- IMPORT JS -->
+  <!-- TITLE -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- IMPORT FAVICON -->
+  <link rel="shortcut icon"
+    href="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/main_logo.png?alt=media&token=03cfebd8-8068-4fc8-8372-d9c1a3b0aeb5"
+    type="image/png" />
+
+  <title>PLAY MUSIC</title>
+</head>
+
+<body id="Top" class="page-01 switchMode">
+  <!-- Loader -->
+  <div id="container_loader">
+    <span class="loader"></span>
+  </div>
+  <!-- End Loader -->
+
+  <!-- Side Bar -->
+  <section
+    class="side-bar bg-gradient-to-r from-gray-200 to-gray-500 fixed top-0 left-0 w-80 h-full px-3.5 py-1.5 transition-all duration-300 ease-in border-r-2 border-white border-opacity-20 rounded-r-10 shadow z-20 backdrop-blur-20">
+    <!-- Section-one -->
+    <div class="section-one">
+      <div class="logo-menu flex items-center">
+        <h2
+          class="logo text-black font-semibold mr-3 opacity-0 pointer-events-none transition duration-400 ease text-4xl">
+          Menu</h2>
+        <i
+          class="fas fa-angle-right text-2xl absolute toggle-btn-1 transform w-10 h-10 text-2xl text-center leading-10 cursor-pointer"></i>
+        <i
+          class="fas fa-angle-left text-2xl absolute toggle-btn-2 transform w-10 h-10 text-2xl text-center leading-10 cursor-pointer opacity-0"></i>
+      </div>
+      <!-- Menu -->
+      <ul class="list mt-2.5">
+        <li class="list-item list-none w-full h-12 my-1.5 mx-0 leading-12">
+          <a href="#explore" class="flex items-center">
+            <i class="fas fa-rocket mr-3"></i>
+            <span class="link-name text-black" style="--i: 1">Explore</span>
+          </a>
+        </li>
+        <li class="list-item list-none w-full h-12 my-1.5 mx-0 leading-12">
+          <a href="#featured_creators" class="flex items-center">
+            <i class="fas fa-music mr-3"></i>
+            <span class="link-name text-black" style="--i: 2">Featured Creators</span>
+          </a>
+        </li>
+        <li class="list-item list-none w-full h-12 my-1.5 mx-0 leading-12">
+          <a href="#trending" class="flex items-center">
+            <i class="fas fa-arrow-trend-up mr-3"></i>
+            <span class="link-name text-black" style="--i: 3">Trending</span>
+          </a>
+        </li>
+        <li class="list-item list-none w-full h-12 my-1.5 mx-0 leading-12">
+          <a href="#category" class="flex items-center">
+            <i class="fas fa-compact-disc mr-3"></i>
+            <span class="link-name text-black" style="--i: 4">Genre</span>
+          </a>
+        </li>
+        <li class="list-item list-none w-full h-12 my-1.5 mx-0 leading-12">
+          <a href="#popular_artists" class="flex items-center">
+            <i class="fas fa-headset mr-3"></i>
+            <span class="link-name text-black" style="--i: 5">Popular Singer</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section-two -->
+    <div class="section-two mt-10">
+      <!-- My music -->
+      <div class="logo-menu flex items-center w-full h-16">
+        <h2
+          class="logo text-black font-semibold mr-3 opacity-0 pointer-events-none transition duration-400 ease text-4xl">
+          My music</h2>
+        <i
+          class="fas fa-headphones text-2xl absolute toggle-btn-1 transform w-10 h-10 text-2xl text-center leading-10 cursor-pointer"></i>
+      </div>
+      <!-- Menu -->
+      <ul class="list mt-10">
+        <li class="list-item list-none w-full h-12 my-1.5 mx-0 leading-12">
+          <a href="genmusic.html" class="flex items-center">
+            <i class="fas fa-robot mr-3"></i>
+            <span class="link-name text-black" style="--i: 6">Generate Music</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- End Side Bar -->
+
+  <!-- Main -->
+  <section class="main">
+    <!-- NAVBAR -->
+    <!-- NAVBAR -->
+    <nav id="navbarFixed">
+      <div class="inner-logo">
+        <a href="index.html">
+          <img src="./assets/images/logo/JPEG/PTIT_MUSIC__3.png" alt="">
+        </a>
+      </div>
+      <!-- FORM: SEARCH -->
+      <div id="search">
+        <input id="searchInput" type="search" placeholder="What do you want to play?"
+          aria-placeholder="Search for music" />
+        <div class="result-songs">
+          <!-- <div class="result-title">
+            <h3>Songs</h3>
+          </div> -->
+          <ul class="result-items">
+            <!-- Nội dung kết quả tìm kiếm sẽ được hiển thị ở đây -->
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+
+                <!-- Like music -->
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+                <!-- Like music -->
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+                <!-- Like music -->
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+
+                <!-- Like music -->
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+
+
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+
+                <!-- Like music -->
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+
+
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+                <!-- Like music -->
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+
+
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+                <!-- Like music -->
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+
+
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+                <!-- Like music -->
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+
+
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+            <li class="result-item">
+              <!-- thông tin về bài hát -->
+              <div class="infor-song">
+                <!-- image -->
+                <div class="infor-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/Ballad%2FMascara.jpeg?alt=media&token=61cdcfe9-e653-4e45-a500-b62cbc92484a"
+                    alt="">
+                </div>
+                <!-- Tên bài hát và ca sĩ -->
+                <div class="infor-name">
+                  <div class="infor-detail">
+                    <h4>Mascara</h4>
+                    <p>Ca Sĩ</p>
+                  </div>
+                </div>
+
+                <!-- Thời gian (duration) -->
+                <div class="duration-song">
+                  <p>3:30</p>
+                </div>
+                <!-- Like music -->
+
+                <div class="like-song">
+                  <span class="far fa-heart"></span>
+                </div>
+                <!-- Option -->
+                <div class="option-song">
+                  <span class="fas fa-ellipsis-h"></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Search -->
+      <ul>
+        <a>
+          <label class="toggle" for="switch">
+            <input onclick="switchMode()" checked="true" id="switch" class="input" type="checkbox" title="switchMode">
+            <div class="icon icon--moon">
+              <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd"
+                  d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                  fill-rule="evenodd"></path>
+              </svg>
+            </div>
+
+            <div class="icon icon--sun">
+              <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z">
+                </path>
+              </svg>
+            </div>
+          </label>
+        </a>
+
+        <a href="javascript:void(0)" id="avatar">
+          <div class="container-avatar">
+            <img id="imgUser" src="" alt="Avatar" />
+          </div>
+          <div class="container__username">
+            <span></span>
+          </div>
+        </a>
+
+        <!-- AVATAR DORPDOWN -->
+        <div class="avatar-dropdown" id="avatarDropdown">
+          <a href="profile.html">
+            <li><span class="far fa-user"></span> Profile</li>
+          </a>
+          <a href="javascript:void(0)" onclick="supportChatMode()">
+            <li><span class="far fa-comment"></span> Support</li>
+          </a>
+          <a href="#">
+            <li><span class="far fa-star"></span> Upgrade Plan</li>
+          </a>
+          <hr />
+          <li class="btnLogout">
+            <button class="logoutBtn">
+              Log out
+            </button>
+          </li>
+        </div>
+      </ul>
+    </nav>
+
+    <!-- Notification when not songs fined -->
+    <div id="noti">
+
+    </div>
+    <!-- Notification when not songs fined -->
+
+    <!-- main player -->
+    <div class="player" id="player">
+      <!-- Dashboard -->
+      <div class="dashboard">
+        <!-- Header -->
+
+        <div class="header">
+          <h4>Now playing</h4>
+          <h2 id="marqueeText">
+            <span></span>
+          </h2>
+        </div>
+
+        <!-- CD -->
+        <div class="cd">
+          <div class="cd-thumb"></div>
+        </div>
+
+        <!-- Control -->
+        <div class="control">
+          <div class="btn btn-repeat">
+            <i class="fa-solid fa-rotate-right"></i>
+          </div>
+          <div class="btn btn-prev">
+            <i class="fa-solid fa-backward-step"></i>
+          </div>
+          <div class="btn btn-toggle-play">
+            <i class="fa-solid fa-play"></i>
+            <i class="fa-solid fa-pause"></i>
+          </div>
+          <div class="btn btn-next">
+            <i class="fa-solid fa-forward-step"></i>
+          </div>
+          <div class="btn btn-random">
+            <i class="fa-solid fa-shuffle"></i>
+          </div>
+        </div>
+        <div class="progress-music">
+          <div class="currentTime">
+            <span></span>
+          </div>
+          <div class="progress-bar">
+            <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100" title="Progress">
+          </div>
+          <div class="remainTime">
+            <span></span>
+          </div>
+        </div>
+
+        <audio id="audio" src="" autoplay></audio>
+      </div>
+
+      <!-- Playlist -->
+      <div class="playlist"></div>
+    </div>
+    <!-- End  main player -->
+
+    <!-- #SECTION: RELATED MUSIC -->
+    <section id="section__trending">
+      <div>
+        <h2>Related Musics</h2>
+      </div>
+
+      <!-- RELATED MUSIC SLIDER -->
+      <div class="card-grid-slider">
+        <!-- CARD GROUP GRID -->
+        <div class="card-group-grid"></div>
+        <div class="card-group-grid"></div>
+        <div class="card-group-grid"></div>
+        <div class="card-group-grid"></div>
+        <div class="card-group-grid"></div>
+      </div>
+    </section>
+
+    <!-- BACK TOP -->
+    <a href="#Top">
+      <div class="back-top" id="backTop">
+        <i class="fa-solid fa-angles-up"></i>
+      </div>
+    </a>
+  </section>
+  <!-- End Main -->
+
+  <script type="module" src="./assets/js/app.js"></script>
+
+  <script type="module" src="./assets/js/updateInforUser.js"></script>
+  <script>
+    // Chờ cho tài liệu HTML được tải xong
+    document.addEventListener("DOMContentLoaded", function () {
+      // Sau 3 giây, ẩn loader
+      setTimeout(hideLoader, 3000);
+    });
+
+    // Hàm ẩn loader
+    function hideLoader() {
+      const audioPlaying = document.getElementById("audio");
+      if (audioPlaying.played) {
+        const loaderContainer = document.getElementById("container_loader");
+        loaderContainer.style.display = "none";
+        loaderContainer.style.transition = "all 0.5s";
+      }
+    }
+  </script>
+</body>
+
+</html>

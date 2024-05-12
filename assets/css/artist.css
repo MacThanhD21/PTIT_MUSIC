@@ -1,0 +1,78 @@
+/*====================
+#02. PAGE: USER
+=====================*/
+.page-02 .back-top {
+  bottom: 20px;
+}
+
+.page-02 .section-playlist-post {
+  margin: 0 auto 100px auto;
+  width: 80%;
+}
+
+.page-02 .section-playlist-post-header {
+  padding: 20px;
+}
+
+.page-02 .card-grid {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  display: grid;
+  gap: 10px 0;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding: 20px;
+  border-radius: var(--border-radius-mmmd);
+}
+
+.page-02 .card-grid .card-simple figure {
+  width: 100%;
+}
+
+.page-02 .card-grid img {
+  object-fit: cover;
+}
+
+.page-02 .card-simple {
+  background-color: var(--background-thirdly-main);
+  border-radius: var(--border-radius-mmmd);
+  transition: var(--transition-2s-ease);
+  scroll-snap-align: start;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.page-02 .card-simple figure {
+  border-radius: var(--border-radius-mmmd);
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+}
+.page-02 .card-simple img {
+  transition: var(--transition-3s-ease);
+  border-radius: var(--border-radius-mmmd);
+  height: 100%;
+  width: 100%;
+}
+
+
+.page-02 .card-simple h3 {
+  transition: var(--transition-3s-ease);
+  margin-top: 6px;
+  font-size: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-clamp: 1;
+  width: 200px;
+}
+
+.page-02 .card-simple p a {
+  font-size: 16px;
+  color: var(--color-silver);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-clamp: 1;
+  width: 200px;
+}

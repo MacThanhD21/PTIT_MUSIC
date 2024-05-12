@@ -1,0 +1,269 @@
+/*========== SWITCH MODE */
+#switchModeBtnLight {
+  display: none;
+}
+
+.switchModeBtnLightToggle {
+  display: flex !important;
+}
+
+.switchModeBtnDarkToggle {
+  display: none;
+}
+
+.switchMode::-webkit-scrollbar-thumb,
+.switchMode *::-webkit-scrollbar-thumb {
+  background-color: var(--background-dark-primary-main);
+}
+
+.switchMode::-webkit-scrollbar-thumb:hover,
+.switchMode::-webkit-scrollbar-thumb:active,
+.switchMode *::-webkit-scrollbar-thumb:hover,
+.switchMode *::-webkit-scrollbar-thumb:active {
+  background-color: var(--background-dark-secondary-main);
+}
+
+.switchMode {
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
+  color: var(--color-white);
+}
+
+/* Navbar */
+.switchMode #navbarFixed {
+  background: linear-gradient(34deg, #000000, #182826, #212d4f, #4d3c5a);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 20s ease infinite;
+  -moz-animation: AnimationName 20s ease infinite;
+  animation: AnimationName 20s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 94%}
+  50%{background-position:100% 7%}
+  100%{background-position:0% 94%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 94%}
+  50%{background-position:100% 7%}
+  100%{background-position:0% 94%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 94%}
+  50%{background-position:100% 7%}
+  100%{background-position:0% 94%}
+}
+.switchMode nav #search input {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  color: #F2E394;
+}
+.switchMode nav #search input:focus {
+  border: 3px solid #eef2f3;
+  border-radius: 10px;
+}
+.switchMode nav ul:nth-child(1) a {
+  color: var(--color-dark-main);
+}
+
+.switchMode nav ul:nth-child(1) a:hover {
+  color: var(--color-white);
+}
+
+.switchMode nav ul:nth-child(2) .far {
+  background-color: var(--background-dark-main);
+  color: var(--color-white);
+}
+
+.switchMode nav ul:nth-child(2) .far:hover {
+  background-color: var(--background-dark-secondary-main);
+}
+
+.switchMode nav ul:nth-child(2) .far:active {
+  background-color: var(--background-dark-primary-main);
+}
+
+/* End Navbar */
+
+/* Main */
+.main {
+  z-index: 9999;
+  position: relative;
+  width: calc(100% - 82px);
+  transition: all .4s ease;
+  /* border-radius: 40px 0 0 40px; */
+  left: 82px;
+  background: #8e9eab;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+}
+
+.switchMode .page-02 header .artist .infor__artist {
+  background: var(--primary-color);
+}
+
+.switchMode .avatar-dropdown {
+  box-shadow: var(--box-shadow-dark-xlg);
+  background-color: var(--color-black);
+}
+
+.switchMode .avatar-dropdown hr {
+  border-color: var(--background-dark-primary-main);
+}
+
+.switchMode .avatar-dropdown a li {
+  color: var(--color-white);
+}
+
+.switchMode .section-explore .section-explore-menu a {
+  color: var(--color-dark-main);
+}
+
+.switchMode .section-explore .section-explore-menu .section-explore-menu-item-active {
+  background-color: var(--background-dark-main);
+}
+
+.switchMode .section-explore .section-explore-menu a:active {
+  background-color: var(--background-dark-primary-main);
+}
+
+.switchMode .card-simple,
+.switchMode .card-playing-horizontal {
+  background-color: var(--background-dark-main);
+}
+
+.switchMode .card-simple h3,
+.switchMode .card-playing-horizontal h4 a {
+  color: var(--color-dark-main) !important;
+}
+
+.switchMode .card-playing-horizontal .card-playing-horizontal-footer a {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.switchMode .card-playing-horizontal .card-playing-horizontal-footer a:hover {
+  background-color: var(--background-dark-primary-main);
+  color: var(--color-white);
+}
+
+.switchMode .card-playing-horizontal .card-playing-horizontal-footer a:active {
+  background-color: var(--background-dark-secondary-main);
+  color: var(--color-white);
+}
+
+.switchMode .card-playing-horizontal p a {
+  color: var(--color-silver) !important;
+}
+
+.switchMode .card-playing-horizontal figure div span {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.switchMode .card-category-vertical:hover {
+  background-color: var(--background-dark-main);
+  color: #ffffff;
+}
+
+.switchMode .card-category-vertical span {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+}
+
+.switchMode .card-artists-vertical {
+  background-color: var(--background-dark-main);
+}
+
+.switchMode .card-artists-vertical h4 {
+  color: var(--color-white);
+}
+
+.switchMode .card-artists-vertical:hover h4 {
+  color: #F46D65;
+}
+
+/* darkMode Player */
+.switchMode .dashboard {
+  color: var(--color-white);
+}
+
+.switchMode .playlist {
+  backdrop-filter: blur(10px);
+  /* Điều chỉnh giá trị theo mong muốn */
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.switchMode .playlist .active {
+  background: linear-gradient(to left, #9a8478, #1e130c);
+  transition: 0.2s;
+
+}
+
+.switchMode.song.active .option,
+.switchMode.song.active .author,
+.switchMode.song.active .title {
+  color: #fff;
+}
+
+/* Main */
+
+.switchMode .side-bar {
+  background: linear-gradient(34deg, #000000, #182826, #212d4f, #4d3c5a);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 20s ease infinite;
+  -moz-animation: AnimationName 20s ease infinite;
+  animation: AnimationName 20s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 94%}
+  50%{background-position:100% 7%}
+  100%{background-position:0% 94%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 94%}
+  50%{background-position:100% 7%}
+  100%{background-position:0% 94%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 94%}
+  50%{background-position:100% 7%}
+  100%{background-position:0% 94%}
+}
+
+.main {
+  z-index: 9999;
+  position: relative;
+  width: calc(100% - 82px);
+  transition: all .4s ease;
+  /* border-radius: 40px 0 0 40px; */
+  left: 82px;
+  background: #8e9eab;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+}
+
+.switchMode .side-bar .logo-menu h2 {
+  color: var(--color-white)
+}
+
+.switchMode .side-bar .logo-menu .toggle-btn {
+  color: #fff;
+}
+
+.switchMode .list .list-item a i {
+  color: var(--color-dark-main);
+}
+
+.switchMode .side-bar .link-name {
+  color: #fff;
+}
+
+.switchMode .side-bar .logo-menu .toggle-btn-1:hover,
+.side-bar .logo-menu .toggle-btn-2:hover {
+  color: #000;
+}
+/* End darkMode Player */
