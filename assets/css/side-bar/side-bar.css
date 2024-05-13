@@ -54,7 +54,7 @@
 }
 
 .side-bar .logo-menu h2 {
-  color: var(--color-black);
+  color: var(--primary-color);
   font-weight: 600;
   margin-left: 13px;
   pointer-events: none;
@@ -78,7 +78,6 @@
   text-align: center;
   line-height: 40px;
   cursor: pointer;
-  transition: .3s;
 }
 
 .side-bar .logo-menu .toggle-btn-2 {
@@ -136,12 +135,12 @@
   height: 50px;
   line-height: 50px;
   text-align: center;
-  color: #103178;
+  color: darkred;
 }
 
 .side-bar .link-name {
   color: #141523;
-  font-weight: 400;
+  font-weight: 500;
   opacity: 1;
   pointer-events: none;
   transition: opacity .3s;

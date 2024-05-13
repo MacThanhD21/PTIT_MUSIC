@@ -31,25 +31,25 @@
 
 /* Navbar */
 .switchMode #navbarFixed {
-  background: linear-gradient(34deg, #000000, #182826, #212d4f, #4d3c5a);
+  background: linear-gradient(34deg, #000000, #182826, #212d4f);
   background-size: 800% 800%;
 
-  -webkit-animation: AnimationName 20s ease infinite;
-  -moz-animation: AnimationName 20s ease infinite;
-  animation: AnimationName 20s ease infinite;
+  -webkit-animation: Linear 20s ease infinite;
+  -moz-animation: Linear 20s ease infinite;
+  animation: Linear 20s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes Linear {
   0%{background-position:0% 94%}
   50%{background-position:100% 7%}
   100%{background-position:0% 94%}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes Linear {
   0%{background-position:0% 94%}
   50%{background-position:100% 7%}
   100%{background-position:0% 94%}
 }
-@keyframes AnimationName {
+@keyframes Linear {
   0%{background-position:0% 94%}
   50%{background-position:100% 7%}
   100%{background-position:0% 94%}
@@ -169,6 +169,9 @@
   color: #F46D65;
 }
 
+.switchMode #Top {
+  color: #fff;
+}
 /* darkMode Player */
 .switchMode .dashboard {
   color: var(--color-white);
@@ -179,7 +182,9 @@
   /* Điều chỉnh giá trị theo mong muốn */
   -webkit-backdrop-filter: blur(5px);
 }
-
+.switchMode .song {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
 .switchMode .playlist .active {
   background: linear-gradient(to left, #9a8478, #1e130c);
   transition: 0.2s;
@@ -195,32 +200,32 @@
 /* Main */
 
 .switchMode .side-bar {
-  background: linear-gradient(34deg, #000000, #182826, #212d4f, #4d3c5a);
+  background: linear-gradient(34deg, #000000, #182826);
   background-size: 800% 800%;
 
-  -webkit-animation: AnimationName 20s ease infinite;
-  -moz-animation: AnimationName 20s ease infinite;
-  animation: AnimationName 20s ease infinite;
+  -webkit-animation: Linear 20s ease infinite;
+  -moz-animation: Linear 20s ease infinite;
+  animation: Linear 20s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes Linear {
   0%{background-position:0% 94%}
   50%{background-position:100% 7%}
   100%{background-position:0% 94%}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes Linear {
   0%{background-position:0% 94%}
   50%{background-position:100% 7%}
   100%{background-position:0% 94%}
 }
-@keyframes AnimationName {
+@keyframes Linear {
   0%{background-position:0% 94%}
   50%{background-position:100% 7%}
   100%{background-position:0% 94%}
 }
 
 .switchMode .side-bar .logo-menu h2 {
-  color: var(--color-white)
+  color: var(--primary-color);
 }
 
 .switchMode .side-bar .logo-menu .toggle-btn {
@@ -235,3 +240,30 @@
   color: #fff;
 }
 /* End darkMode Player */
+
+
+/* Navbar */
+.switchMode.page-02 main {
+  background: linear-gradient(34deg, #000000, #182826, #212d4f);
+  background-size: 800% 800%;
+
+  -webkit-animation: Linear 20s ease infinite;
+  -moz-animation: Linear 20s ease infinite;
+  animation: Linear 20s ease infinite;
+}
+
+@-webkit-keyframes Linear {
+  0%{background-position:0% 94%}
+  50%{background-position:100% 7%}
+  100%{background-position:0% 94%}
+}
+@-moz-keyframes Linear {
+  0%{background-position:0% 94%}
+  50%{background-position:100% 7%}
+  100%{background-position:0% 94%}
+}
+@keyframes Linear {
+  0%{background-position:0% 94%}
+  50%{background-position:100% 7%}
+  100%{background-position:0% 94%}
+}

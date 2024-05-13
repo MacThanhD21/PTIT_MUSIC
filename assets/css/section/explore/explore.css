@@ -70,10 +70,11 @@
   overflow: hidden;
   line-clamp: 1;
   width: 200px;
+  color: darkblue;
 }
 
 .card-simple:hover h3 {
-  color: #EF2519;
+  color: var(--primary-color);
 }
 
 .card-simple p a {

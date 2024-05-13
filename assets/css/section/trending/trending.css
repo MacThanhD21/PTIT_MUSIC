@@ -121,6 +121,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .card-group-grid .card-category-vertical h4 {

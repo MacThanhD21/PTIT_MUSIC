@@ -1,14 +1,14 @@
 /* Main */
 
 .switchMode .main {
-  background: linear-gradient(34deg, #000000, #182826, #212d4f, #4d3c5a);
+  background: linear-gradient(34deg, #000000, #182826);
   background-size: 800% 800%;
-  -webkit-animation: AnimationName 20s ease infinite;
-  -moz-animation: AnimationName 20s ease infinite;
-  animation: AnimationName 20s ease infinite;
+  -webkit-animation: Linear 20s ease infinite;
+  -moz-animation: Linear 20s ease infinite;
+  animation: Linear 20s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes Linear {
   0% {
     background-position: 0% 94%
   }
@@ -22,7 +22,7 @@
   }
 }
 
-@-moz-keyframes AnimationName {
+@-moz-keyframes Linear {
   0% {
     background-position: 0% 94%
   }
@@ -36,7 +36,7 @@
   }
 }
 
-@keyframes AnimationName {
+@keyframes Linear {
   0% {
     background-position: 0% 94%
   }
