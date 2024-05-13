@@ -5,34 +5,6 @@ import { albums } from "../data/albums.js";
 import { Categories } from "../data/category.js";
 import { getAverageColor } from "../helpers/getAverageColor.js";
 
-const sidebar = document.querySelector(".side-bar");
-const toggleBtn1 = document.querySelector(".toggle-btn-1");
-const toggleBtn2 = document.querySelector(".toggle-btn-2");
-// const section_music_player = document.querySelector(".section-music-player");
-const main = document.querySelector(".main");
-
-let sidebarExpanded = false;
-
-const toggleSidebar = () => {
-  sidebar.classList.toggle("active");
-  toggleBtn2.classList.toggle("active");
-
-  const newWidth = sidebarExpanded
-    ? "calc(100% - 100px)"
-    : "calc(100% - 250px)";
-  const newLeft = sidebarExpanded ? "90px" : "260px";
-
-  try {
-    main.style.width = newWidth;
-    main.style.left = newLeft;
-  } catch (error) {
-    console.error("Error:", error);
-  }
-  sidebarExpanded = !sidebarExpanded;
-};
-
-toggleBtn1.addEventListener("click", toggleSidebar);
-toggleBtn2.addEventListener("click", toggleSidebar);
 // console.log(songs, albums, Categories);
 /************ Khai Báo Tất Cả các biến cần sử dụng trong Page************* */
 const $ = document.querySelector.bind(document);

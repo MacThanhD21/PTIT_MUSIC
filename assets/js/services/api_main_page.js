@@ -33,35 +33,7 @@ let currentIdxCate = 0;
 // App Object
 const app = {
   isPlaying: false,
-  // Handle Events
-  handle__BtnToggle: () => {
-    const sidebar = document.querySelector(".side-bar");
-    const toggleBtn1 = document.querySelector(".toggle-btn-1");
-    const toggleBtn2 = document.querySelector(".toggle-btn-2");
-    const logoPage = document.querySelector(".inner-logo");
-
-    const main = document.querySelector(".main");
-
-    let sidebarExpanded = true;
-
-    const toggleSidebar = () => {
-      sidebar.classList.toggle("active");
-      toggleBtn2.classList.toggle("active");
-      logoPage.classList.toggle("active");
-      const newWidth = sidebarExpanded
-        ? "calc(100% - 100px)"
-        : "calc(100% - 250px)";
-      const newLeft = sidebarExpanded ? "90px" : "250px";
-
-      main.style.width = newWidth;
-      main.style.left = newLeft;
-
-      sidebarExpanded = !sidebarExpanded;
-    };
-
-    toggleBtn1.addEventListener("click", toggleSidebar);
-    toggleBtn2.addEventListener("click", toggleSidebar);
-  },
+  
   // Render the UI
   render__one: () => {
     // Render the Explore Container
@@ -410,7 +382,6 @@ const app = {
 
   
   start: () => {
-    app.handle__BtnToggle();
     app.render__one();
     app.render__two();
     app.render__three();

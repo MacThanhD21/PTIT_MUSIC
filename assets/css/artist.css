@@ -1,6 +1,6 @@
-/*====================
-#02. PAGE: USER
-=====================*/
+.page-02 main {
+  height: 100vh;
+}
 .page-02 .back-top {
   bottom: 20px;
 }

@@ -51,16 +51,7 @@ a {
   color: #000;
 }
 
-nav {
-  position: fixed !important;
-}
-.switchMode .main{
-  background: -webkit-linear-gradient(to right, #434343, #000000);
-  background: linear-gradient(to right, #434343, #000000);
-  color: var(--color-white);
-}
-
-.main {
+.sub-main {
   z-index: 0;
   position: absolute;
   top: 90px;

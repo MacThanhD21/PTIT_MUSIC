@@ -28,12 +28,20 @@
   <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="./assets/css/base.css" />
+
   <link rel="stylesheet" href="./assets/css/profile.css" />
+  <link rel="stylesheet" href="./assets/css/main/main.css" />
   <link rel="stylesheet" href="./assets/css/navbar/navbar.css" />
   <link rel="stylesheet" href="./assets/css/mode/mode.css" />
+  <link rel="stylesheet" href="./assets/css/switchMode/switchMode.css" />
+
   <link rel="stylesheet" href="./assets/css/avatar/avatar.css" />
   <link rel="stylesheet" href="./assets/css/side-bar/side-bar.css" />
-  <!-- <link rel="stylesheet" href="./assets/css/switchMode/switchMode.css" /> -->
+  <link rel="stylesheet" href="./assets/css/loader/loader.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script>
     // Kiểm tra xem có cookie chứa token hay không
@@ -56,8 +64,7 @@
 </head>
 
 <body class="switchMode">
-
-
+  <!-- Side Bar -->
   <section class="side-bar">
     <!-- Section-one -->
     <div class="section-one">
@@ -139,11 +146,6 @@
   <section class="main">
     <!-- NAVBAR -->
     <nav id="navbarFixed">
-      <div class="inner-logo">
-        <a href="index.html">
-          <img src="./assets/images/logo/JPEG/PTIT_MUSIC__3.png" alt="">
-        </a>
-      </div>
       <!-- FORM: SEARCH -->
       <div id="search">
         <input id="searchInput" type="search" placeholder="What do you want to play?"
@@ -534,8 +536,9 @@
         </div>
       </ul>
     </nav>
+
     <!-- main -->
-    <div class="main container-fluid-xl ">
+    <div class="sub-main container-fluid-xl">
       <!-- Account page navigation-->
       <div class="row">
         <div class="col-xl-4">
@@ -593,13 +596,6 @@
         </div>
       </div>
     </div>
-
-    <!-- back top -->
-    <a href="#Top">
-      <div class="back-top" id="backTop">
-        <i class="fa-solid fa-angles-up"></i>
-      </div>
-    </a>
   </section>
 
 
@@ -614,6 +610,7 @@
   <!-- Main JS -->
   <script src="./assets/js/profile.js"></script>
   <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/handleBtnToggle.js"></script>
   <script type="module" src="./assets/js/updateInforUser.js"></script>
 
 </body>
