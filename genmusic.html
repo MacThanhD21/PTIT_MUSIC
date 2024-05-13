@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="./assets/css/avatar/avatar.css">
   <link rel="stylesheet" href="./assets/css/mode/mode.css">
   <link rel="stylesheet" href="./assets/css/navbar/navbar.css">
+  <link rel="stylesheet" href="./assets/css/side-bar/side-bar.css">
   <link rel="stylesheet" href="./assets/css/switchMode/switchMode.css">
 
 
@@ -62,152 +63,233 @@
 </style>
 
 <body class="switchMode">
-  <!-- NAVBAR -->
-  <nav id="navbarFixed">
-    <div class="inner-logo">
-      <a href="index.html">
-        <img src="./assets/images/logo/JPEG/PTIT_MUSIC__3.png" alt="">
-      </a>
-    </div>
-    <!-- FORM: SEARCH -->
-    <div id="search">
-      <input id="searchInput" type="search" placeholder="What do you want to play?"
-        aria-placeholder="Search for music" />
 
-    </div>
-    <!-- End Search -->
-    <ul>
-      <a>
-        <label class="toggle" for="switch">
-          <input onclick="switchMode()" checked="true" id="switch" class="input" type="checkbox" title="switchMode">
-          <div class="icon icon--moon">
-            <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path clip-rule="evenodd"
-                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-                fill-rule="evenodd"></path>
-            </svg>
-          </div>
-
-          <div class="icon icon--sun">
-            <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z">
-              </path>
-            </svg>
-          </div>
-        </label>
-      </a>
-
-      <a href="javascript:void(0)" id="avatar">
-        <div class="container-avatar">
-          <img id="imgUser" src="" alt="Avatar" />
+  <section class="side-bar">
+    <!-- Section-one -->
+    <div class="section-one">
+      <div class="logo-menu">
+        <div class="inner-logo">
+          <a href="index.html">
+            <img src="./assets/images/logo/JPEG/PTIT_MUSIC__3.png" alt="">
+          </a>
         </div>
-        <div class="container__username">
-          <span></span>
-        </div>
-      </a>
-
-      <!-- AVATAR DORPDOWN -->
-      <div class="avatar-dropdown" id="avatarDropdown">
-        <a href="profile.html">
-          <li><span class="far fa-user"></span>Profile</li>
-        </a>
-        <a href="javascript:void(0)" onclick="supportChatMode()">
-          <li><span class="far fa-comment"></span>Support</li>
-        </a>
-        <a href="#">
-          <li><span class="far fa-star"></span>Upgrade Plan</li>
-        </a>
-        <hr />
-        <li class="btnLogout">
-          <button class="logoutBtn">
-            Log out
-          </button>
-        </li>
+        <i class="fa-solid fa-angles-right toggle-btn-1"></i>
+        <i class="fa-solid fa-angles-left toggle-btn-2"></i>
       </div>
-    </ul>
-  </nav>
+      <!-- Menu -->
+      <ul class="list list-one">
+        <li class="list-item">
+          <a href="#explore">
+            <i class="fa-solid fa-rocket"></i>
+            <span class="link-name" style="--i: 1">Explore</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#featured_creators">
+            <i class="fa-solid fa-music"></i>
+            <span class="link-name" style="--i: 2">Featured Creators</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#trending">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <span class="link-name" style="--i: 3">Trending</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#category">
+            <i class="fa-solid fa-compact-disc"></i>
+            <span class="link-name" style="--i: 4">Genre</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#popular_artists">
+            <i class="fa-solid fa-headset"></i>
+            <span class="link-name" style="--i: 5">Popular Singer</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-  <!-- Main -->
-  <div class="Container">
-    <!-- GenMusic -->
-    <div class="container mt-5">
-      <div class="row d-flex flex-column align-items-center justify-content-center bd-highlight mb-3">
-        <div class="col-md-8">
-          <div class="text-center">
-            <h1 class="my-4">GenMusic</h1>
+    <!-- Section-two -->
+    <div class="section-two">
+      <!-- My music -->
+      <div class="logo-menu">
+        <h2 class="logo">My music</h2>
+        <i class="fa-solid fa-headphones toggle-btn-1"></i>
+      </div>
+      <!-- Menu -->
+      <ul class="list">
+        <li class="list-item">
+          <a href="#">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span class="link-name" style="--i: 6"> Recently Played </span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#">
+            <i class="fa-solid fa-heart"></i>
+            <span class="link-name" style="--i: 7"> Favorite Songs </span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="genmusic.html">
+            <i class="fa-solid fa-robot"></i>
+            <span class="link-name" style="--i: 8"> Generate Music </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="main">
+    <!-- NAVBAR -->
+    <nav id="navbarFixed">
+      <div class="inner-logo">
+        <a href="index.html">
+          <img src="./assets/images/logo/JPEG/PTIT_MUSIC__3.png" alt="">
+        </a>
+      </div>
+      <!-- FORM: SEARCH -->
+      <div id="search">
+        <input id="searchInput" type="search" placeholder="What do you want to play?"
+          aria-placeholder="Search for music" />
+
+      </div>
+      <!-- End Search -->
+      <ul>
+        <a>
+          <label class="toggle" for="switch">
+            <input onclick="switchMode()" checked="true" id="switch" class="input" type="checkbox" title="switchMode">
+            <div class="icon icon--moon">
+              <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd"
+                  d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                  fill-rule="evenodd"></path>
+              </svg>
+            </div>
+
+            <div class="icon icon--sun">
+              <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z">
+                </path>
+              </svg>
+            </div>
+          </label>
+        </a>
+
+        <a href="javascript:void(0)" id="avatar">
+          <div class="container-avatar">
+            <img id="imgUser" src="" alt="Avatar" />
           </div>
-        </div>
-        <div class="desc d-flex justify-content-center align-items-center">
-          <p>Fill your mood and we will generate the music for you</p>
-        </div>
+          <div class="container__username">
+            <span></span>
+          </div>
+        </a>
 
+        <!-- AVATAR DORPDOWN -->
+        <div class="avatar-dropdown" id="avatarDropdown">
+          <a href="profile.html">
+            <li><span class="far fa-user"></span>Profile</li>
+          </a>
+          <a href="javascript:void(0)" onclick="supportChatMode()">
+            <li><span class="far fa-comment"></span>Support</li>
+          </a>
+          <a href="#">
+            <li><span class="far fa-star"></span>Upgrade Plan</li>
+          </a>
+          <hr />
+          <li class="btnLogout">
+            <button class="logoutBtn">
+              Log out
+            </button>
+          </li>
+        </div>
+      </ul>
+    </nav>
 
-        <div class="col-lg-8 md-6">
-          <div class="inner-genmusic my-4">
-            <div class="container-fluid">
-              <form class="d-flex" onsubmit="event.preventDefault();">
-                <input class="form-control me-2" type="search" placeholder="Fill your mood..." aria-label="Search"
-                  spellcheck="false">
-                <button class="btn btn-outline-success" type="submit">Generate</button>
-              </form>
+    <!-- Main -->
+    <div class="Container">
+      <!-- GenMusic -->
+      <div class="container mt-5">
+        <div class="row d-flex flex-column align-items-center justify-content-center bd-highlight mb-3">
+          <div class="col-md-8">
+            <div class="text-center">
+              <h1 class="my-4">GenMusic</h1>
             </div>
           </div>
+          <div class="desc d-flex justify-content-center align-items-center">
+            <p>Fill your mood and we will generate the music for you</p>
+          </div>
 
-          <div class="loader my-3"></div>
-          <div class="result my-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title mx-1">Generated Music</h5>
-                <div class="row genMusicItem">
-                  <!-- Item 1 -->
-                  <div class="col-lg-6 col-md-6 item item-1">
-                    <div class="desc-title">
-                      Melody 1
-                    </div>
-                    <div class="genMusicItem__img">
-                      <img src="./assets/images/data_fake/dcc8f9574b7beee051743c8312e1b4f5.jpg" alt="music" width="100"
-                        height="100">
-                    </div>
-                    <div class="genMusicItem__info">
-                      <h6 class="genMusicItem__title"></h6>
-                      <p class="genMusicItem__author"></p>
-                    </div>
-                    <div class="genMusicItem__action">
-                      <div class="btn_HandleMusic">
-                        <button title="play music" class="btn btn-primary">
-                          <i class="fa-solid fa-play"></i>
-                        </button>
-                        <button title="pause music" class="btn btn-danger">
-                          <i class="fa-solid fa-stop"></i>
-                        </button>
+
+          <div class="col-lg-8 md-6">
+            <div class="inner-genmusic my-4">
+              <div class="container-fluid">
+                <form class="d-flex" onsubmit="event.preventDefault();">
+                  <input class="form-control me-2" type="search" placeholder="Fill your mood..." aria-label="Search"
+                    spellcheck="false">
+                  <button class="btn btn-outline-success" type="submit">Generate</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="loader my-3"></div>
+            <div class="result my-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mx-1">Generated Music</h5>
+                  <div class="row genMusicItem">
+                    <!-- Item 1 -->
+                    <div class="col-lg-6 col-md-6 item item-1">
+                      <div class="desc-title">
+                        Melody 1
                       </div>
-                      <audio src=""></audio>
-                    </div>
-                  </div>
-                  <!-- Item 2 -->
-                  <div class="col-lg-6 col-md-6 item item-2">
-                    <div class="desc-title">
-                      Melody 2
-                    </div>
-                    <div class="genMusicItem__img">
-                      <img src="./assets/images/data_fake/dcc8f9574b7beee051743c8312e1b4f5.jpg" alt="music" width="100"
-                        height="100">
-                    </div>
-                    <div class="genMusicItem__info">
-                      <h6 class="genMusicItem__title"></h6>
-                      <p class="genMusicItem__author"></p>
-                    </div>
-                    <div class="genMusicItem__action">
-                      <div class="btn_HandleMusic">
-                        <button title="play music" class="btn btn-primary">
-                          <i class="fa-solid fa-play"></i>
-                        </button>
-                        <button title="pause music" class="btn btn-danger">
-                          <i class="fa-solid fa-stop"></i>
-                        </button>
+                      <div class="genMusicItem__img">
+                        <img src="./assets/images/data_fake/dcc8f9574b7beee051743c8312e1b4f5.jpg" alt="music"
+                          width="100" height="100">
                       </div>
-                      <audio src=""></audio>
+                      <div class="genMusicItem__info">
+                        <h6 class="genMusicItem__title"></h6>
+                        <p class="genMusicItem__author"></p>
+                      </div>
+                      <div class="genMusicItem__action">
+                        <div class="btn_HandleMusic">
+                          <button title="play music" class="btn btn-primary">
+                            <i class="fa-solid fa-play"></i>
+                          </button>
+                          <button title="pause music" class="btn btn-danger">
+                            <i class="fa-solid fa-stop"></i>
+                          </button>
+                        </div>
+                        <audio src=""></audio>
+                      </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="col-lg-6 col-md-6 item item-2">
+                      <div class="desc-title">
+                        Melody 2
+                      </div>
+                      <div class="genMusicItem__img">
+                        <img src="./assets/images/data_fake/dcc8f9574b7beee051743c8312e1b4f5.jpg" alt="music"
+                          width="100" height="100">
+                      </div>
+                      <div class="genMusicItem__info">
+                        <h6 class="genMusicItem__title"></h6>
+                        <p class="genMusicItem__author"></p>
+                      </div>
+                      <div class="genMusicItem__action">
+                        <div class="btn_HandleMusic">
+                          <button title="play music" class="btn btn-primary">
+                            <i class="fa-solid fa-play"></i>
+                          </button>
+                          <button title="pause music" class="btn btn-danger">
+                            <i class="fa-solid fa-stop"></i>
+                          </button>
+                        </div>
+                        <audio src=""></audio>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -217,7 +299,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
 
   <!-- JS Bootraps -->

@@ -38,19 +38,20 @@ const app = {
     const sidebar = document.querySelector(".side-bar");
     const toggleBtn1 = document.querySelector(".toggle-btn-1");
     const toggleBtn2 = document.querySelector(".toggle-btn-2");
+    const logoPage = document.querySelector(".inner-logo");
 
     const main = document.querySelector(".main");
 
-    let sidebarExpanded = false;
+    let sidebarExpanded = true;
 
     const toggleSidebar = () => {
       sidebar.classList.toggle("active");
       toggleBtn2.classList.toggle("active");
-
+      logoPage.classList.toggle("active");
       const newWidth = sidebarExpanded
         ? "calc(100% - 100px)"
         : "calc(100% - 250px)";
-      const newLeft = sidebarExpanded ? "90px" : "260px";
+      const newLeft = sidebarExpanded ? "90px" : "250px";
 
       main.style.width = newWidth;
       main.style.left = newLeft;
@@ -144,8 +145,7 @@ const app = {
                 </div>
                 <audio src="${song_1.link}" id="audio"></audio>
               <figure class="card-playing-horizontal-header">
-                <a href="album.html"
-                  ><img
+                <a><img
                     src="${song_1.imagecover}"
                     alt=""
                 /></a>
@@ -175,8 +175,7 @@ const app = {
               </div>
               <audio src="${song_2.link}" id="audio"></audio>
               <figure class="card-playing-horizontal-header">
-                <a href="album.html"
-                  ><img
+                <a><img
                     src="${song_2.imagecover}"
                     alt=""
                 /></a>
@@ -206,8 +205,7 @@ const app = {
               </div>
               <audio src="${song_3.link}" id="audio"></audio>
               <figure class="card-playing-horizontal-header">
-                <a href="album.html"
-                  ><img
+                <a><img
                     src="${song_3.imagecover}"
                     alt=""
                 /></a>
@@ -322,7 +320,7 @@ const app = {
           const otherSongs = Array.from(songItems).filter(
             (item) => item !== clickedSong
           );
-          // console.log(otherSongs);
+          // // console.log(otherSongs);
           otherSongs.forEach((item) => {
             item.style.background = "#000";
           });

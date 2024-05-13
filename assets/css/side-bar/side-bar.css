@@ -1,12 +1,9 @@
-/* CSS cho side-bar */
-/* Khi không có lớp 'active' */
 .side-bar {
-  background: -webkit-linear-gradient(to left, #eef2f3, #8e9eab);
   background: linear-gradient(to left, #eef2f3, #8e9eab);
   position: fixed;
   top: 0;
   left: 0;
-  width: 80px;
+  width: 250px;
   height: 100%;
   padding: 6px 14px;
   transition: all .4s ease;
@@ -20,17 +17,34 @@
   -ms-backdrop-filter: blur(20px);
 }
 
-/* Khi có lớp 'active' */
+.side-bar .inner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 80px;
+  top: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.side-bar .inner-logo.active {
+  display: none;
+  transition: all 0.3s ease;
+}
+
 .side-bar.active {
   width: 250px;
 }
 
-/* Phần section-two */
+.side-bar .list-one {
+  z-index: 1000;
+  position: relative;
+}
+
 .side-bar .section-two {
   margin-top: 10px;
 }
 
-/* Menu logo */
 .side-bar .logo-menu {
   display: flex;
   align-items: center;
@@ -39,39 +53,57 @@
   white-space: nowrap;
 }
 
-
-/* Logo khi có lớp 'active' */
-.side-bar.active .logo-menu .logo {
+.side-bar .logo-menu h2 {
+  color: var(--color-black);
+  font-weight: 600;
+  margin-left: 13px;
+  pointer-events: none;
   opacity: 1;
+  font-size: 35px;
+  transition: .4s ease;
 }
 
-.side-bar .logo-menu .toggle-btn-1:hover,
-.side-bar .logo-menu .toggle-btn-2:hover {
-  background: #F0F2F5;
-  border-radius: 5px;
+.side-bar.active .logo-menu .logo {
+  opacity: 0;
+}
+
+.side-bar .logo-menu .toggle-btn-1,
+.side-bar .logo-menu .toggle-btn-2 {
+  position: absolute;
+  left: 90%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: .3s;
 }
 
 .side-bar .logo-menu .toggle-btn-2 {
-  left: 85%;
+  left: 90%;
+  opacity: 1;
+}
+.side-bar .logo-menu .toggle-btn-1 {
+  left: 90%;
   opacity: 0;
 }
 
 .side-bar.active .logo-menu .toggle-btn-1 {
+  left: 40px;
+  opacity: 1;
+}
+
+.side-bar.active .logo-menu .toggle-btn-2 {
   left: 85%;
   opacity: 0;
 }
 
-.side-bar.active .logo-menu .toggle-btn-2 {
-  left: 80%;
-  opacity: 1;
-}
-
-/* Danh sách */
 .side-bar .list {
   margin-top: 10px;
 }
 
-/* Mục trong danh sách */
 .list .list-item {
   list-style: none;
   width: 100%;
@@ -80,7 +112,10 @@
   line-height: 50px;
 }
 
-/* Liên kết trong mục */
+.side-bar.active .list .list-item {
+  width: 50px;
+}
+
 .list .list-item a {
   display: flex;
   font-size: 18px;
@@ -90,13 +125,12 @@
   transition: transform 0.3s ease;
 }
 
-/* Liên kết được chọn hoặc khi rê chuột qua */
 .list .list-item.active a,
 .list .list-item a:hover {
   background: rgba(255, 255, 255, .1);
+  transform: translateX(10px);
 }
 
-/* Biểu tượng trong liên kết */
 .list .list-item a i {
   min-width: 50px;
   height: 50px;
@@ -105,18 +139,16 @@
   color: #103178;
 }
 
-/* Tên liên kết */
 .side-bar .link-name {
   color: #141523;
   font-weight: 400;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
   transition: opacity .3s;
 }
 
-/* Tên liên kết khi có lớp 'active' */
 .side-bar.active .link-name {
-  opacity: 1;
+  opacity: 0;
   pointer-events: auto;
-  transition-delay: calc(.1s * var(--i));
+  transition-delay: calc(.0.5s * var(--i));
 }

@@ -115,23 +115,13 @@
   .section-music-player .containerPlayer .section-music-player-timeline audio {
     width: 300px !important;
   }
-
+/* 
   .side-bar {
     display: none;
-  }
+  } */
 
   #Top nav {
     padding: 0;
-  }
-
-  #Top .main {
-    width: 100% !important;
-    left: 0 !important;
-  }
-
-  #Top .main .section-music-player {
-    width: 100% !important;
-    left: 0 !important;
   }
 
   #Top .image__slider {

@@ -12,7 +12,9 @@
   align-items: center;
   scroll-snap-type: x mandatory;
   max-width: 1600px;
+  color: #fff;
 }
+
 #explore>div:first-child h2 {
   font-size: 30px;
 }
@@ -22,16 +24,17 @@
   /* display: none; */
 }
 
-.card-grid-slider::-webkit-scrollbar-thumb {
-}
+.card-grid-slider::-webkit-scrollbar-thumb {}
 
 .card-grid-slider::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Color of the track */
+  background-color: #f1f1f1;
+  /* Color of the track */
 }
+
 /* CARD SIMPLE */
 .card-simple {
-  background-color: var(--background-thirdly-main);
   border-radius: var(--border-radius-mmmd);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   transition: var(--transition-2s-ease);
   scroll-snap-align: start;
   margin-right: 10px;
@@ -83,4 +86,5 @@
   line-clamp: 1;
   width: 200px;
 }
+
 /* End Section Explore */

@@ -85,20 +85,6 @@
 
 /* End Navbar */
 
-/* Main */
-.main {
-  z-index: 9999;
-  position: relative;
-  width: calc(100% - 82px);
-  transition: all .4s ease;
-  /* border-radius: 40px 0 0 40px; */
-  left: 82px;
-  background: #8e9eab;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
-  background: linear-gradient(to right, #eef2f3, #8e9eab);
-}
-
 .switchMode .page-02 header .artist .infor__artist {
   background: var(--primary-color);
 }
@@ -129,8 +115,8 @@
 }
 
 .switchMode .card-simple,
-.switchMode .card-playing-horizontal {
-  background-color: var(--background-dark-main);
+.switchMode .card-playing-horizontal{
+  background-color: #212d4f;
 }
 
 .switchMode .card-simple h3,
@@ -260,10 +246,5 @@
 
 .switchMode .side-bar .link-name {
   color: #fff;
-}
-
-.switchMode .side-bar .logo-menu .toggle-btn-1:hover,
-.side-bar .logo-menu .toggle-btn-2:hover {
-  color: #000;
 }
 /* End darkMode Player */
