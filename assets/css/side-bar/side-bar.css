@@ -78,6 +78,7 @@
   text-align: center;
   line-height: 40px;
   cursor: pointer;
+  transition: all .4s ease;
 }
 
 .side-bar .logo-menu .toggle-btn-2 {

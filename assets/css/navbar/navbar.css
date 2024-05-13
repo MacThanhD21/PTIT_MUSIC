@@ -172,6 +172,16 @@ nav #search .result-albums {
   border-radius: 10px;
 }
 
+.download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.btn-download span {
+  white-space: nowrap;
+}
+
 @keyframes move {
   0% {
     background-position: 0 0;
