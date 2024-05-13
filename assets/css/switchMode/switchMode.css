@@ -158,7 +158,7 @@
 }
 
 .switchMode .card-artists-vertical {
-  background-color: var(--background-dark-main);
+  background-color: var(--color-silver);
 }
 
 .switchMode .card-artists-vertical h4 {
@@ -166,7 +166,7 @@
 }
 
 .switchMode .card-artists-vertical:hover h4 {
-  color: #F46D65;
+  color: #FFECBC;
 }
 
 .switchMode #Top {
@@ -230,10 +230,6 @@
 
 .switchMode .side-bar .logo-menu .toggle-btn {
   color: #fff;
-}
-
-.switchMode .list .list-item a i {
-  color: var(--color-dark-main);
 }
 
 .switchMode .side-bar .link-name {

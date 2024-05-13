@@ -33,7 +33,7 @@ let currentIdxCate = 0;
 // App Object
 const app = {
   isPlaying: false,
-  
+
   // Render the UI
   render__one: () => {
     // Render the Explore Container
@@ -293,9 +293,7 @@ const app = {
             (item) => item !== clickedSong
           );
           // // console.log(otherSongs);
-          otherSongs.forEach((item) => {
-            item.style.background = "#000";
-          });
+
           const imgElement = new Image();
           if (imgElement) {
             // console.log(imgElement);
@@ -380,7 +378,6 @@ const app = {
     // });
   },
 
-  
   start: () => {
     app.render__one();
     app.render__two();

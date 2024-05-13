@@ -165,10 +165,7 @@ const handlePlayMusic = () => {
       const clickedSong = e.currentTarget;
       // console.log(clickedSong);
       const otherSongs = Array.from(songItems).filter((item) => item !== clickedSong);
-      // console.log(otherSongs);
-      otherSongs.forEach((item) => {
-        item.style.background = "#000";
-      });
+
       if (
         !e.target.classList.contains("fa-heart") &&
         !e.target.classList.contains("fa-download")

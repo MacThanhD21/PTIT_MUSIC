@@ -15,59 +15,144 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="./assets/css/base.css" />
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/side-bar/side-bar.css" />
+  
+  <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
   <link rel="stylesheet" href="./assets/css/premium.css" />
 </head>
 
 <body>
 
-  <!-- Main Pricing -->
-  <main class="main flow">
-    <h1 class="main__heading">Pricing</h1>
-    <div class="main__cards cards">
-      <div class="cards__inner">
-        <div class="cards__card card">
-          <h2 class="card__heading">Basic</h2>
-          <p class="card__price">$0</p>
-          <ul role="list" class="card__bullets flow">
-            <li>Basic access to a limited collection of songs.</li>
-            <li>Limited skips per hour.</li>
-            <li>Ad-supported.</li>
-          </ul>
-          <a href="#basic" class="card__cta cta">Free</a>
+  <section class="side-bar">
+    <!-- Section-one -->
+    <div class="section-one">
+      <div class="logo-menu">
+        <div class="inner-logo">
+          <a href="index.html">
+            <img src="./assets/images/logo/JPEG/PTIT_MUSIC__3.png" alt="">
+          </a>
         </div>
-
-        <div class="cards__card card">
-          <h2 class="card__heading">Pro</h2>
-          <p class="card__price">$19.99</p>
-          <ul role="list" class="card__bullets flow">
-            <li>Ad-free listening experience.</li>
-            <li>High-quality audio streaming.</li>
-            <li>Unlimited skips.</li>
-            <li>Access to curated playlists.</li>
-            <li>Priority customer support via email.</li>
-          </ul>
-          <a href="#pro" class="card__cta cta">Upgrade to Pro</a>
-        </div>
-
-        <div class="cards__card card">
-          <h2 class="card__heading">Ultimate</h2>
-          <p class="card__price">$29.99</p>
-          <ul role="list" class="card__bullets flow">
-            <li>All features from the Pro Edition.</li>
-            <li>Offline listening mode.</li>
-            <li>Access to exclusive unreleased tracks.</li>
-            <li>Early access to new album releases.</li>
-            <li>24/7 priority customer support.</li>
-          </ul>
-          <a href="#ultimate" class="card__cta cta">Go Ultimate</a>
-        </div>
+        <i class="fa-solid fa-angles-right toggle-btn-1"></i>
+        <i class="fa-solid fa-angles-left toggle-btn-2"></i>
       </div>
-
-      <div class="overlay cards__inner"></div>
+      <!-- Menu -->
+      <ul class="list list-one">
+        <li class="list-item">
+          <a href="#explore">
+            <i class="fa-solid fa-rocket"></i>
+            <span class="link-name" style="--i: 1">Explore</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#featured_creators">
+            <i class="fa-solid fa-music"></i>
+            <span class="link-name" style="--i: 2">Featured Creators</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#trending">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <span class="link-name" style="--i: 3">Trending</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#category">
+            <i class="fa-solid fa-compact-disc"></i>
+            <span class="link-name" style="--i: 4">Genre</span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#popular_artists">
+            <i class="fa-solid fa-headset"></i>
+            <span class="link-name" style="--i: 5">Popular Singer</span>
+          </a>
+        </li>
+      </ul>
     </div>
-  </main>
-  <!-- End Main Pricing -->
+
+    <!-- Section-two -->
+    <div class="section-two">
+      <!-- My music -->
+      <div class="logo-menu">
+        <h2 class="logo">My music</h2>
+        <i class="fa-solid fa-headphones toggle-btn-1"></i>
+      </div>
+      <!-- Menu -->
+      <ul class="list">
+        <li class="list-item">
+          <a href="#">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span class="link-name" style="--i: 6"> Recently Played </span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#">
+            <i class="fa-solid fa-heart"></i>
+            <span class="link-name" style="--i: 7"> Favorite Songs </span>
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="genmusic.html">
+            <i class="fa-solid fa-robot"></i>
+            <span class="link-name" style="--i: 8"> Generate Music </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <section class="main">
+    <!-- Main Pricing -->
+    <main class="main flow">
+      <h1 class="main__heading">Pricing</h1>
+      <div class="main__cards cards">
+        <div class="cards__inner">
+          <div class="cards__card card">
+            <h2 class="card__heading">Basic</h2>
+            <p class="card__price">$0</p>
+            <ul role="list" class="card__bullets flow">
+              <li>Basic access to a limited collection of songs.</li>
+              <li>Limited skips per hour.</li>
+              <li>Ad-supported.</li>
+            </ul>
+            <a href="#basic" class="card__cta cta">Free</a>
+          </div>
+
+          <div class="cards__card card">
+            <h2 class="card__heading">Pro</h2>
+            <p class="card__price">$19.99</p>
+            <ul role="list" class="card__bullets flow">
+              <li>Ad-free listening experience.</li>
+              <li>High-quality audio streaming.</li>
+              <li>Unlimited skips.</li>
+              <li>Access to curated playlists.</li>
+              <li>Priority customer support via email.</li>
+            </ul>
+            <a href="#pro" class="card__cta cta">Upgrade to Pro</a>
+          </div>
+
+          <div class="cards__card card">
+            <h2 class="card__heading">Ultimate</h2>
+            <p class="card__price">$29.99</p>
+            <ul role="list" class="card__bullets flow">
+              <li>All features from the Pro Edition.</li>
+              <li>Offline listening mode.</li>
+              <li>Access to exclusive unreleased tracks.</li>
+              <li>Early access to new album releases.</li>
+              <li>24/7 priority customer support.</li>
+            </ul>
+            <a href="#ultimate" class="card__cta cta">Go Ultimate</a>
+          </div>
+        </div>
+
+        <div class="overlay cards__inner"></div>
+      </div>
+    </main>
+    <!-- End Main Pricing -->
+  </section>
+  <!-- End Main -->
+
   <script src="./assets/js/app.js"></script>
   <script src="./assets/js/premium.js"></script>
 </body>

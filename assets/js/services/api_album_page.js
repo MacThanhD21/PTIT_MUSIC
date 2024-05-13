@@ -106,15 +106,11 @@ try {
 
 // Process music playing
 const processCurSongPlaying = () => {
-  // console.log("Con cụ mày...");
   const audio = $$(".card-playing-horizontal #audio");
   const playBtn = $$(".btnHandleMusic .fa-play");
   const pauseBtn = $$(".btnHandleMusic .fa-pause");
 
   const currentPlayingAudio = document.querySelector(".card-playing-horizontal.playing audio");
-  // console.log(currentPlayingAudio);
-  // console.log("-------------------------------");
-
   if (currentPlayingAudio) {
     try {
       currentPlayingAudio.pause();
@@ -423,20 +419,17 @@ const app = {
       // mainColor.src = this.currentSong.imagecover;
 
       const mainColor = new Image();
-      // const mainColor = new Image();
-      // console.log(mainColor);
-
       if (mainColor) {
-        // mainColor.crossOrigin = "anonymous"; // Set crossOrigin attribute to allow loading cross-origin images
+
         mainColor.src = app.currentSong.imagecover; // Blocked by CORS policy
         // console.log(mainColor);
         mainColor.setAttribute("crossOrigin", "anonymous");
         mainColor.onload = function () {
           const { R, G, B } = getAverageColor(mainColor, 4);
           // console.log(R, G, B);
-          $(`.side-bar`).style.cssText = `background: rgb(${R}, ${G},${B})`;
-          $(`.main`).style.cssText = `background: rgb(${R}, ${G},${B})`;
-          $(`#navbarFixed`).style.cssText = `background: rgb(${R}, ${G},${B})`;
+          $(`.side-bar`).style.background = `rgb(${R}, ${G},${B})`;
+          $(`.main`).style.background = `rgb(${R}, ${G},${B})`;
+          $(`#navbarFixed`).style.background = `rgb(${R}, ${G},${B})`;
         };
       } else {
         console.error("mainColor element not found.");

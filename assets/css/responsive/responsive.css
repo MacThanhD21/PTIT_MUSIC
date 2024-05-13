@@ -45,6 +45,12 @@
 }
 
 @media (max-width: 992px) {
+
+  #Top .upgrade,
+  #Top .download {
+    display: none;
+    transition: var(--transition-3s-ease);
+  }
   .section-music-player .containerPlayer .section-music-player-timeline audio {
     width: 500px !important;
   }
@@ -201,7 +207,14 @@
     margin: 0;
   }
   .page-01 #player .dashboard .control {
-    width: 90%;
+    width: 100%;
+  }
+  .page-01 #player .dashboard .control .btn {
+    font-size: 20px;
+    padding: 10px;
+  }
+  .page-01 #player .dashboard .progress-music {
+    width: 100%;
   }
 
   .page-01 #player .playlist {
