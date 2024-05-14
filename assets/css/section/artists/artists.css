@@ -3,6 +3,10 @@
 .section-popular-artists {
   margin-top: 40px;
 }
+#popular_artists h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
 
 .section-popular-artists div {
   margin-bottom: 10px;

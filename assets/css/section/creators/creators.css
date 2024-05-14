@@ -4,9 +4,9 @@
   margin-top: 40px;
 }
 
-
 #featured_creators>div:first-child h2 {
   font-size: 30px;
+  margin-bottom: 20px;
 }
 .section-featured-creators .card-simple {
   margin-bottom: 10px;

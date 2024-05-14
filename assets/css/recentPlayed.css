@@ -1,0 +1,8 @@
+.card-grid-slider {
+  display: flex;
+  padding: 10px 0;
+  overflow-x: auto;
+  align-items: center;
+  scroll-snap-type: x mandatory;
+  max-width: 1600px;
+}

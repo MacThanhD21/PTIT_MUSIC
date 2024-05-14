@@ -16,6 +16,7 @@
 
 #explore>div:first-child h2 {
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
 /* WebKit (Chrome, Safari) */

@@ -28,8 +28,10 @@
   <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/recentPlayed.css" />
 
-  <link rel="stylesheet" href="./assets/css/profile.css" />
+  <link rel="stylesheet" href="./assets/css/section/trending/trending.css" />
+
   <link rel="stylesheet" href="./assets/css/main/main.css" />
   <link rel="stylesheet" href="./assets/css/navbar/navbar.css" />
   <link rel="stylesheet" href="./assets/css/mode/mode.css" />
@@ -224,7 +226,429 @@
     </nav>
 
     <!-- MAIN -->
-    
+    <main>
+      <!-- #SECTION: TRENDING -->
+      <section class="section-trending" id="trending">
+        <div>
+          <h2>Recent Played</h2>
+        </div>
+
+        <!-- TRENDING SLIDER -->
+        <div class="card-grid-slider" id="treding_container">
+          <!-- CARD GROUP GRID -->
+          <div class="card-group-grid">
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_1.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_1.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_1.title}</span>
+                </h4>
+                <p>
+                  <span>${song_1.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_2.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_2.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_2.title}</span>
+                </h4>
+                <p>
+                  <span>${song_2.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_3.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_3.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_3.title}</span>
+                </h4>
+                <p>
+                  <span>${song_3.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-group-grid">
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_1.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_1.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_1.title}</span>
+                </h4>
+                <p>
+                  <span>${song_1.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_2.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_2.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_2.title}</span>
+                </h4>
+                <p>
+                  <span>${song_2.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_3.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_3.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_3.title}</span>
+                </h4>
+                <p>
+                  <span>${song_3.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-group-grid">
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_1.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_1.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_1.title}</span>
+                </h4>
+                <p>
+                  <span>${song_1.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_2.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_2.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_2.title}</span>
+                </h4>
+                <p>
+                  <span>${song_2.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_3.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_3.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_3.title}</span>
+                </h4>
+                <p>
+                  <span>${song_3.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-group-grid">
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_1.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_1.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_1.title}</span>
+                </h4>
+                <p>
+                  <span>${song_1.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_2.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_2.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_2.title}</span>
+                </h4>
+                <p>
+                  <span>${song_2.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_3.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_3.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_3.title}</span>
+                </h4>
+                <p>
+                  <span>${song_3.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-group-grid">
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_1.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_1.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_1.title}</span>
+                </h4>
+                <p>
+                  <span>${song_1.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_2.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_2.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_2.title}</span>
+                </h4>
+                <p>
+                  <span>${song_2.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-playing-horizontal">
+              <div class="btnHandleMusic">
+                <span class="fa-solid fa-play" onclick=""></span>
+                <span class="fa-solid fa-pause" onclick=""></span>
+              </div>
+              <audio src="${song_3.link}" id="audio"></audio>
+              <figure class="card-playing-horizontal-header">
+                <a><img src="${song_3.imagecover}" alt="" /></a>
+              </figure>
+              <div class="card-playing-horizontal-body">
+                <h4>
+                  <span>${song_3.title}</span>
+                </h4>
+                <p>
+                  <span>${song_3.artist}</span>
+                </p>
+              </div>
+              <div class="card-playing-horizontal-footer">
+                <div class="btnHandleDif likeMusic">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="btnHandleDif downloadMusic">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- End MAIN -->
   </section>
 

@@ -4,6 +4,11 @@
   margin-top: 40px;
 }
 
+#category h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
 /* CARD CATEGORY VERTICAL */
 .card-category-vertical {
   border-radius: var(--border-radius-mmmd);

@@ -5,6 +5,7 @@
 }
 .section-trending>div:first-child h2 {
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
 /* CARD PLAYING HORIZONTAL */
