@@ -1,7 +1,7 @@
 // Chờ cho tài liệu HTML được tải xong
 document.addEventListener("DOMContentLoaded", function () {
   // Sau 3 giây, ẩn loader
-  setTimeout(hideLoader, 3500);
+  setTimeout(hideLoader, 2000);
 });
 
 // Hàm ẩn loader
