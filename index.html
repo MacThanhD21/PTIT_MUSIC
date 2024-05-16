@@ -48,22 +48,7 @@
 
   <!-- IMPORT JS -->
   <!-- <script src="./assets/js/logout.js"></script> -->
-  <script>
-    // Kiểm tra xem có cookie chứa token hay không
-    function getCookie(name) {
-      const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-      return cookieValue ? cookieValue.pop() : '';
-    }
-
-    // Lấy giá trị của cookie 'accessToken'
-    const accessToken = getCookie('accessToken');
-    console.log(accessToken);
-
-    // Nếu không có token, chuyển hướng người dùng đến trang đăng nhập
-    if (!accessToken) {
-      window.location.href = '/sign_in.html';
-    }
-  </script>
+  <script async src="./assets/js/helpers/checkAuth.js"></script>
   <script type="module" src="./assets/js/logout.js"></script>
   <script defer type="module" src="./assets/js/services/api_main_page.js"></script>
   <script defer type="module" src="./assets/js/searchFeature.js"></script>
@@ -74,9 +59,9 @@
 
 <body id="Top" class="switchMode">
   <!-- Loader -->
-  <!-- <div id="container_loader">
+  <div id="container_loader">
     <span class="loader"></span>
-  </div> -->
+  </div>
   <!-- End Loader -->
 
   <section class="side-bar">
@@ -172,7 +157,7 @@
       <div class="boxtanghinh" style="width: 180px;">
 
       </div>
-      
+
       <!-- Nâng cấp tài khoản -->
       <div class="upgrade">
         <a href="premium.html">
@@ -233,7 +218,7 @@
             <li><span class="far fa-comment"></span>Support</li>
           </a>
           <a href="/premium.html">
-            <li><span class="far fa-star"></span>Upgrade Plan</li>
+            <li><span class="far fa-star"></span>Upgrade Account</li>
           </a>
           <hr />
           <li class="btnLogout">

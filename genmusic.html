@@ -39,24 +39,7 @@
   <link rel="stylesheet" href="./assets/css/side-bar/side-bar.css">
   <link rel="stylesheet" href="./assets/css/switchMode/switchMode.css">
 
-
-  <!-- Check login -->
-  <script>
-    // Kiểm tra xem có cookie chứa token hay không
-    function getCookie(name) {
-      const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-      return cookieValue ? cookieValue.pop() : '';
-    }
-
-    // Lấy giá trị của cookie 'accessToken'
-    const accessToken = getCookie('accessToken');
-    console.log(accessToken);
-
-    // Nếu không có token, chuyển hướng người dùng đến trang đăng nhập
-    if (!accessToken) {
-      window.location.href = '/sign_in.html';
-    }
-  </script>
+  
   <!-- Axios -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
@@ -214,7 +197,7 @@
             <li><span class="far fa-comment"></span>Support</li>
           </a>
           <a href="#">
-            <li><span class="far fa-star"></span>Upgrade Plan</li>
+            <li><span class="far fa-star"></span>Upgrade Account</li>
           </a>
           <hr />
           <li class="btnLogout">
@@ -321,7 +304,12 @@
   <!-- JS File -->
   <script type="module" src="./assets/js/services/api_genmusic.js"></script>
   <script src="./assets/js/handleBtnToggle.js"></script>
-  
+  <!-- JS File -->
+  <script type="module" src="./assets/js/updateInforUser.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <!-- Check login -->
+  <script src="./assets/js/helpers/checkAuth.js"></script>
+  <script src="./assets/js/logout.js"></script>
   <!-- JS Bootraps -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -330,9 +318,7 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
 
-  <!-- JS File -->
-  <script type="module" src="./assets/js/updateInforUser.js"></script>
-  <script src="./assets/js/app.js"></script>
+  
 </body>
 
 </html>

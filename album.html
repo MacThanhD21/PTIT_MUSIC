@@ -37,24 +37,11 @@
 
   <!-- IMPORT JS -->
 
-  <script>
-    // Kiểm tra xem có cookie chứa token hay không
-    function getCookie(name) {
-      const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-      return cookieValue ? cookieValue.pop() : '';
-    }
-
-    // Lấy giá trị của cookie 'accessToken'
-    const accessToken = getCookie('accessToken');
-
-    // Nếu không có token, chuyển hướng người dùng đến trang đăng nhập
-    if (!accessToken) {
-      window.location.href = '/sign_in.html';
-    }
-  </script>
-
   <script defer type="module" src="./assets/js/services/api_album_page.js"></script>
   <script defer type="module" src="./assets/js/services/relateMusic.js"></script>
+  <script async src="./assets/js/helpers/checkAuth.js"></script>
+  <script async src="./assets/js/logout.js"></script>
+
 
   <!-- IMPORT JS -->
   <!-- TITLE -->
@@ -223,7 +210,7 @@
             <li><span class="far fa-comment"></span>Support</li>
           </a>
           <a href="/premium.html">
-            <li><span class="far fa-star"></span>Upgrade Plan</li>
+            <li><span class="far fa-star"></span>Upgrade Account</li>
           </a>
           <hr />
           <li class="btnLogout">
