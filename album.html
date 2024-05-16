@@ -21,13 +21,6 @@
   </script>
   <!-- tailwincss -->
 
-  <!-- IMPORT JS -->
-
-  <script defer type="module" src="./assets/js/services/api_album_page.js"></script>
-  <script defer type="module" src="./assets/js/services/relateMusic.js"></script>
-  <script async src="./assets/js/helpers/checkAuth.js"></script>
-  <script async src="./assets/js/logout.js"></script>
-
   <!-- IMPORT CSS MAIN -->
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="./assets/css/base.css" />
@@ -308,28 +301,18 @@
     </a>
   </section>
   <!-- End Main -->
+  <!-- IMPORT JS -->
 
+  <script defer type="module" src="./assets/js/services/api_album_page.js"></script>
+  <script defer type="module" src="./assets/js/services/relateMusic.js"></script>
+  <script async src="./assets/js/helpers/checkAuth.js"></script>
+  <script async src="./assets/js/logout.js"></script>
+  
   <script src="./assets/js/app.js"></script>
   <script src="./assets/js/handleBtnToggle.js"></script>
   <script src="./assets/js/helpers/loader.js"></script>
   <script type="module" src="./assets/js/updateInforUser.js"></script>
-  <!-- <script>
-    // Chờ cho tài liệu HTML được tải xong
-    document.addEventListener("DOMContentLoaded", function () {
-      // Sau 3 giây, ẩn loader
-      setTimeout(hideLoader, 3000);
-    });
 
-    // Hàm ẩn loader
-    function hideLoader() {
-      const audioPlaying = document.getElementById("audio");
-      if (audioPlaying.played) {
-        const loaderContainer = document.getElementById("container_loader");
-        loaderContainer.style.display = "none";
-        loaderContainer.style.transition = "all 0.5s";
-      }
-    }
-  </script> -->
 </body>
 
 </html>
