@@ -64,19 +64,19 @@
   }
 
   .page-01 #player {
-    height: 52vh !important;
+    height: 82vh !important;
     border-radius: 10px;
   }
 
   .page-01 #player .dashboard {
-    height: 30vh !important;
+    height: 82vh !important;
     width: 100%;
     border-radius: 10px;
   }
 
   .page-01 #player .playlist {
     grid-template-columns: repeat(1, 1fr);
-    height: 22vh !important;
+    height: 50vh !important;
     top: 210px;
     width: 100%;
   }
