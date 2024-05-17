@@ -2,288 +2,141 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- tailwincss -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: '#da373d',
-          }
-        }
-      }
-    }
-  </script>
-  <!-- tailwincss -->
-
-  <!-- Slick JS -->
-  <link rel="stylesheet" type="text/css" href="./assets/animation/slick/slick.css" />
-  <link rel="stylesheet" type="text/css" href="./assets/animation/slick/slick-theme.css" />
-
-  <!-- Font Awesome -->
+  <script>tailwind.config = { theme: { extend: { colors: { clifford: "#da373d" } } } }</script>
+  <link rel="stylesheet" type="text/css" href="./assets/animation/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./assets/animation/slick/slick-theme.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- IMPORT FAVICON -->
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="shortcut icon"
     href="https://firebasestorage.googleapis.com/v0/b/ptitmusic-57385.appspot.com/o/main_logo.png?alt=media&token=03cfebd8-8068-4fc8-8372-d9c1a3b0aeb5"
-    type="image/png" />
-
-  <!-- IMPORT CSS MAIN -->
-  <link rel="stylesheet" href="./assets/css/reset.css" />
-  <link rel="stylesheet" href="./assets/css/base.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/main/main.css" />
-  <link rel="stylesheet" href="./assets/css/side-bar/side-bar.css" />
-  <link rel="stylesheet" href="./assets/css/navbar/navbar.css" />
-  <link rel="stylesheet" href="./assets/css/avatar/avatar.css" />
-  <link rel="stylesheet" href="./assets/css/mode/mode.css" />
-  <link rel="stylesheet" href="./assets/css/switchMode/switchMode.css" />
-  <link rel="stylesheet" href="./assets/css/responsive/responsive.css" />
-  <link rel="stylesheet" href="./assets/css/loader/loader.css" />
-
-  <!-- IMPORT JS -->
-  <!-- <script src="./assets/js/logout.js"></script> -->
+    type="image/png">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/main/main.css">
+  <link rel="stylesheet" href="./assets/css/side-bar/side-bar.css">
+  <link rel="stylesheet" href="./assets/css/navbar/navbar.css">
+  <link rel="stylesheet" href="./assets/css/avatar/avatar.css">
+  <link rel="stylesheet" href="./assets/css/mode/mode.css">
+  <link rel="stylesheet" href="./assets/css/switchMode/switchMode.css">
+  <link rel="stylesheet" href="./assets/css/responsive/responsive.css">
+  <link rel="stylesheet" href="./assets/css/loader/loader.css">
   <script async src="./assets/js/helpers/checkAuth.js"></script>
   <script type="module" src="./assets/js/logout.js"></script>
-  <script defer type="module" src="./assets/js/services/api_main_page.js"></script>
-  <script defer type="module" src="./assets/js/searchFeature.js"></script>
-
-  <!-- TITLE -->
+  <script defer="defer" type="module" src="./assets/js/services/api_main_page.js"></script>
+  <script defer="defer" type="module" src="./assets/js/searchFeature.js"></script>
   <title>PTIT MUSIC</title>
 </head>
 
 <body id="Top" class="switchMode">
-  <!-- Loader -->
-  <div id="container_loader">
-    <span class="loader"></span>
-  </div>
-  <!-- End Loader -->
-
+  <div id="container_loader"><span class="loader"></span></div>
   <section class="side-bar">
-    <!-- Section-one -->
     <div class="section-one">
       <div class="logo-menu">
-        <div class="inner-logo">
-          <a href="index.html">
-            <img src="./assets/images/logo/JPEG/PTIT_MUSIC__3.png" alt="">
-          </a>
-        </div>
-        <i class="fa-solid fa-angles-right toggle-btn-1"></i>
-        <i class="fa-solid fa-angles-left toggle-btn-2"></i>
+        <div class="inner-logo"><a href="index.html"><img src="./assets/images/logo/JPEG/PTIT_MUSIC__3.png" alt=""></a>
+        </div><i class="fa-solid fa-angles-right toggle-btn-1"></i> <i class="fa-solid fa-angles-left toggle-btn-2"></i>
       </div>
-      <!-- Menu -->
       <ul class="list list-one">
-        <li class="list-item">
-          <a href="#explore">
-            <i class="fa-solid fa-rocket"></i>
-            <span class="link-name" style="--i: 1">Explore</span>
-          </a>
-        </li>
-        <li class="list-item">
-          <a href="#featured_creators">
-            <i class="fa-solid fa-music"></i>
-            <span class="link-name" style="--i: 2">Featured Creators</span>
-          </a>
-        </li>
-        <li class="list-item">
-          <a href="#trending">
-            <i class="fa-solid fa-arrow-trend-up"></i>
-            <span class="link-name" style="--i: 3">Trending</span>
-          </a>
-        </li>
-        <li class="list-item">
-          <a href="#category">
-            <i class="fa-solid fa-compact-disc"></i>
-            <span class="link-name" style="--i: 4">Genre</span>
-          </a>
-        </li>
-        <li class="list-item">
-          <a href="#popular_artists">
-            <i class="fa-solid fa-headset"></i>
-            <span class="link-name" style="--i: 5">Popular Singer</span>
-          </a>
-        </li>
+        <li class="list-item"><a href="#explore"><i class="fa-solid fa-rocket"></i> <span class="link-name"
+              style="--i:1">Explore</span></a></li>
+        <li class="list-item"><a href="#featured_creators"><i class="fa-solid fa-music"></i> <span class="link-name"
+              style="--i:2">Featured Creators</span></a></li>
+        <li class="list-item"><a href="#trending"><i class="fa-solid fa-arrow-trend-up"></i> <span class="link-name"
+              style="--i:3">Trending</span></a></li>
+        <li class="list-item"><a href="#category"><i class="fa-solid fa-compact-disc"></i> <span class="link-name"
+              style="--i:4">Genre</span></a></li>
+        <li class="list-item"><a href="#popular_artists"><i class="fa-solid fa-headset"></i> <span class="link-name"
+              style="--i:5">Popular Singer</span></a></li>
       </ul>
     </div>
-
-    <!-- Section-two -->
     <div class="section-two">
-      <!-- My music -->
       <div class="logo-menu">
-        <h2 class="logo">My music</h2>
-        <i class="fa-solid fa-headphones toggle-btn-1"></i>
+        <h2 class="logo">My music</h2><i class="fa-solid fa-headphones toggle-btn-1"></i>
       </div>
-      <!-- Menu -->
       <ul class="list">
-        <li class="list-item">
-          <a href="/recentPlayed.html">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            <span class="link-name" style="--i: 6"> Recently Played </span>
-          </a>
-        </li>
-        <li class="list-item">
-          <a href="/favoriteSong.html">
-            <i class="fa-solid fa-heart"></i>
-            <span class="link-name" style="--i: 7"> Favorite Songs </span>
-          </a>
-        </li>
-        <li class="list-item">
-          <a href="genmusic.html">
-            <i class="fa-solid fa-robot"></i>
-            <span class="link-name" style="--i: 8"> Generate Music </span>
-          </a>
-        </li>
+        <li class="list-item"><a href="/recentPlayed.html"><i class="fa-solid fa-clock-rotate-left"></i> <span
+              class="link-name" style="--i:6">Recently Played</span></a></li>
+        <li class="list-item"><a href="/favoriteSong.html"><i class="fa-solid fa-heart"></i> <span class="link-name"
+              style="--i:7">Favorite Songs</span></a></li>
+        <li class="list-item"><a href="genmusic.html"><i class="fa-solid fa-robot"></i> <span class="link-name"
+              style="--i:8">Generate Music</span></a></li>
       </ul>
     </div>
   </section>
-
-  <!-- Section Main -->
   <section class="main">
-    <!-- NAVBAR -->
     <nav id="navbarFixed">
-      <!-- FORM: SEARCH -->
-      <div id="search">
-        <input id="searchInput" type="search" placeholder="What do you want to play?"
-          aria-placeholder="Search for music" />
-      </div>
-      <!-- Result songs -->
-      <!-- End Search -->
-
-      <div class="boxtanghinh" style="width: 180px;">
-
-      </div>
-
-      <!-- Nâng cấp tài khoản -->
-      <div class="upgrade">
-        <a href="premium.html">
-          <button class="btn btn-upgrade">Upgrade Account</button>
-        </a>
-      </div>
-      <!-- End Nâng cáp tài khoản -->
-
-      <!-- Button Download App Android -->
-      <div class="download">
-        <a href="https://www.upload-apk.com/u5UN9TY0WmoNrWz" target="_blank" rel="noopener">
-          <button class="btn-download">
-            <i class="fab fa-google-play"></i>
-            <span>Download App</span>
-          </button>
-        </a>
-      </div>
-      <!-- End Button Download App Android -->
-
-      <!-- User -->
-      <ul>
-        <a>
-          <label class="toggle" for="switch">
-            <input onclick="switchMode()" checked="true" id="switch" class="input" type="checkbox" title="switchMode">
-            <div class="icon icon--moon">
-              <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <div id="search"><input id="searchInput" type="search" placeholder="What do you want to play?"
+          aria-placeholder="Search for music"></div>
+      <div class="boxtanghinh" style="width:180px"></div>
+      <div class="upgrade"><a href="premium.html"><button class="btn btn-upgrade">Upgrade Account</button></a></div>
+      <div class="download"><a href="https://www.upload-apk.com/u5UN9TY0WmoNrWz" target="_blank" rel="noopener"><button
+            class="btn-download"><i class="fab fa-google-play"></i> <span>Download App</span></button></a></div>
+      <ul><a><label class="toggle" for="switch"><input onclick="switchMode()" checked="true" id="switch" class="input"
+              type="checkbox" title="switchMode">
+            <div class="icon icon--moon"><svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
                 <path clip-rule="evenodd"
                   d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
                   fill-rule="evenodd"></path>
-              </svg>
-            </div>
-
-            <div class="icon icon--sun">
-              <svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              </svg></div>
+            <div class="icon icon--sun"><svg height="24" width="24" fill="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z">
                 </path>
-              </svg>
-            </div>
-          </label>
+              </svg></div>
+          </label> </a><a href="javascript:void(0)" id="avatar">
+          <div class="container-avatar"><img id="imgUser" src="" alt="Avatar"></div>
+          <div class="container__username"><span></span></div>
         </a>
-
-        <a href="javascript:void(0)" id="avatar">
-          <div class="container-avatar">
-            <img id="imgUser" src="" alt="Avatar" />
-          </div>
-          <div class="container__username">
-            <span></span>
-          </div>
-        </a>
-
-        <!-- AVATAR DORPDOWN -->
-        <div class="avatar-dropdown" id="avatarDropdown">
-          <a href="profile.html">
+        <div class="avatar-dropdown" id="avatarDropdown"><a href="profile.html">
             <li><span class="far fa-user"></span>Profile</li>
-          </a>
-          <a href="javascript:void(0)" onclick="supportChatMode()">
+          </a><a href="javascript:void(0)" onclick="supportChatMode()">
             <li><span class="far fa-comment"></span>Support</li>
-          </a>
-          <a href="/premium.html">
+          </a><a href="/premium.html">
             <li><span class="far fa-star"></span>Upgrade Account</li>
           </a>
-          <hr />
-          <li class="btnLogout">
-            <button class="logoutBtn">
-              Log out
-            </button>
-          </li>
+          <hr>
+          <li class="btnLogout"><button class="logoutBtn">Log out</button></li>
         </div>
       </ul>
-
-      <!-- End User -->
     </nav>
-
-    <!-- MAIN -->
     <main>
-      <!-- Section Slide Image -->
       <div class="image__slider">
         <div class="image__slider__container">
-          <div class="image__slider__item">
-            <img src="https://i.pinimg.com/564x/95/19/78/9519781f55548066d1dcd54770c373c3.jpg" alt="" />
-          </div>
-          <div class="image__slider__item">
-            <img src="https://i.pinimg.com/564x/cd/f4/c9/cdf4c99c240673f8c63f3ef46f862dc4.jpg" alt="" />
-          </div>
-          <div class="image__slider__item">
-            <img src="https://i.pinimg.com/564x/27/b5/89/27b589b03e3ba90c0f9eb450a1e6bf44.jpg" alt="" />
-          </div>
-          <div class="image__slider__item">
-            <img src="https://i.pinimg.com/564x/a8/80/8c/a8808cf7be7f573c94218d844aa0c80d.jpg" alt="" />
-          </div>
-          <div class="image__slider__item">
-            <img src="https://i.pinimg.com/736x/63/68/51/636851d748113f4f3c47f1b26ef8ad78.jpg" alt="" />
-          </div>
-          <div class="image__slider__item">
-            <img src="https://i.pinimg.com/736x/f6/45/f5/f645f55c7310597473abc3d96f56e092.jpg" alt="" />
-          </div>
-          <div class="image__slider__item">
-            <img src="https://i.pinimg.com/736x/61/7d/89/617d8942160c41a8401e00ad57075ea7.jpg" alt="" />
-          </div>
-          <div class="image__slider__item">
-            <img src="https://i.pinimg.com/564x/a6/ba/f9/a6baf90754f47d0528ee306f0ba70bbe.jpg" alt="" />
-          </div>
+          <div class="image__slider__item"><img
+              src="https://i.pinimg.com/564x/95/19/78/9519781f55548066d1dcd54770c373c3.jpg" alt=""></div>
+          <div class="image__slider__item"><img
+              src="https://i.pinimg.com/564x/cd/f4/c9/cdf4c99c240673f8c63f3ef46f862dc4.jpg" alt=""></div>
+          <div class="image__slider__item"><img
+              src="https://i.pinimg.com/564x/27/b5/89/27b589b03e3ba90c0f9eb450a1e6bf44.jpg" alt=""></div>
+          <div class="image__slider__item"><img
+              src="https://i.pinimg.com/564x/a8/80/8c/a8808cf7be7f573c94218d844aa0c80d.jpg" alt=""></div>
+          <div class="image__slider__item"><img
+              src="https://i.pinimg.com/736x/63/68/51/636851d748113f4f3c47f1b26ef8ad78.jpg" alt=""></div>
+          <div class="image__slider__item"><img
+              src="https://i.pinimg.com/736x/f6/45/f5/f645f55c7310597473abc3d96f56e092.jpg" alt=""></div>
+          <div class="image__slider__item"><img
+              src="https://i.pinimg.com/736x/61/7d/89/617d8942160c41a8401e00ad57075ea7.jpg" alt=""></div>
+          <div class="image__slider__item"><img
+              src="https://i.pinimg.com/564x/a6/ba/f9/a6baf90754f47d0528ee306f0ba70bbe.jpg" alt=""></div>
         </div>
       </div>
-
-      <!-- End Section Slider Image -->
-      <!-- #SECTION: EXPLORE -->
       <section class="section-explore" id="explore">
-        <!-- EXPLORE MENU -->
         <div class="section-explore-menu">
           <h2>Explore</h2>
-          <!-- <a href="#" class="section-explore-menu-item-active">Explore</a> -->
         </div>
-
-        <!-- EXPLORE SLIDER -->
         <div class="card-grid-slider"></div>
       </section>
-
-      <!-- #SECTION: FEATURED CREATORS -->
       <section class="section-featured-creators" id="featured_creators">
         <div>
           <h2>Featured Creators</h2>
         </div>
-
-        <!-- FEATURED CREATORS SLIDER -->
         <div class="card-grid-slider">
           <div class="card-group-grid"></div>
           <div class="card-group-grid"></div>
@@ -296,16 +149,11 @@
           <div class="card-group-grid"></div>
         </div>
       </section>
-
-      <!-- #SECTION: TRENDING -->
       <section class="section-trending" id="trending">
         <div>
           <h2>Trending</h2>
         </div>
-
-        <!-- TRENDING SLIDER -->
         <div class="card-grid-slider" id="treding_container">
-          <!-- CARD GROUP GRID -->
           <div class="card-group-grid"></div>
           <div class="card-group-grid"></div>
           <div class="card-group-grid"></div>
@@ -313,106 +161,43 @@
           <div class="card-group-grid"></div>
         </div>
       </section>
-
-      <!-- #SECTION: CATEGORY -->
       <section class="section-category" id="category">
         <div>
           <h2>Genre</h2>
         </div>
-
-        <!-- CATEGORY SLIDER -->
         <div class="card-grid-slider">
-          <!-- CARD GROUP GRID -->
-
-          <div class="card-group-grid">
-          </div>
-          <div class="card-group-grid">
-          </div>
-          <div class="card-group-grid">
-          </div>
-          <div class="card-group-grid">
-          </div>
-          <div class="card-group-grid">
-          </div>
-          <div class="card-group-grid">
-          </div>
-          <div class="card-group-grid">
-          </div>
-          <div class="card-group-grid">
-          </div>
-          <div class="card-group-grid">
-          </div>
-          <div class="card-group-grid">
-          </div>
+          <div class="card-group-grid"></div>
+          <div class="card-group-grid"></div>
+          <div class="card-group-grid"></div>
+          <div class="card-group-grid"></div>
+          <div class="card-group-grid"></div>
+          <div class="card-group-grid"></div>
+          <div class="card-group-grid"></div>
+          <div class="card-group-grid"></div>
+          <div class="card-group-grid"></div>
+          <div class="card-group-grid"></div>
         </div>
       </section>
-
-      <!-- #SECTION: POPULAR ARTISTS -->
       <section class="section-popular-artists" id="popular_artists">
         <div>
           <h2>Famous Singer</h2>
         </div>
-
-        <!-- POPULAR ARTISTS SLIDER -->
         <div class="card-grid-slider"></div>
       </section>
-    </main>
-
-    <!-- Chat Bot -->
-
-    <!-- End Chat Bot -->
-    <!-- BACK TOP -->
-    <a href="#Top">
-      <div class="back-top" id="backTop">
-        <i class="fa-solid fa-angles-up"></i>
-      </div>
+    </main><a href="#Top">
+      <div class="back-top" id="backTop"><i class="fa-solid fa-angles-up"></i></div>
     </a>
   </section>
-  <!-- End Section Main -->
-
-  <script>
-
-  </script>
+  <script></script>
   <script type="module" src="./assets/js/sign_in.js"></script>
   <script src="./assets/js/app.js"></script>
   <script type="module" src="./assets/js/updateInforUser.js"></script>
   <script src="./assets/js/handleBtnToggle.js"></script>
   <script src="./assets/js/helpers/loader.js"></script>
-  <!-- Slick Js -->
   <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
     integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script>
-    $('.image__slider__container').slick({
-      arrows: true,
-      centerMode: true,
-      slidesToShow: 3,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            arrows: true,
-            centerMode: true,
-            slidesToShow: 2,
-            slidesToScroll: 2,
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            arrows: true,
-            centerMode: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          }
-        },
-      ]
-    });
-  </script>
-
+  <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>$(".image__slider__container").slick({ arrows: !0, centerMode: !0, slidesToShow: 3, autoplay: !0, autoplaySpeed: 2e3, slidesToScroll: 1, responsive: [{ breakpoint: 768, settings: { arrows: !0, centerMode: !0, slidesToShow: 2, slidesToScroll: 2 } }, { breakpoint: 768, settings: { arrows: !0, centerMode: !0, slidesToShow: 1, slidesToScroll: 1 } }] })</script>
 </body>
 
 </html>
