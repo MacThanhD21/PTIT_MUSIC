@@ -1,11 +1,5 @@
 import { albums } from "../data/albums.js";
 import { artists } from "../data/artists.js";
-
-// console.log(artists);
-// console.log(albums);
-// idArtist khi click vào artist sẽ lấy danh sách các album của artist đó
-
-// Lấy tham số albumId từ URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const artistIdFromMainPage = urlParams.get("artistId");
@@ -15,10 +9,7 @@ if (artistIdFromMainPage !== null) {
   let artistFinded = artists.find(
     (artist) => artist._id === artistIdFromMainPage
   );
-
-  // console.log(artistFinded);
-  let albumFinded = artistFinded.id_albums; // laasy ra danh sach id cac album cua artist
-
+  let albumFinded = artistFinded.id_albums; 
   async function getAlbumData(idAlbum) {
     return await albums.find((album) => album._id === idAlbum);
   }
@@ -42,15 +33,10 @@ if (artistIdFromMainPage !== null) {
 } else {
   listAlbumData = albums;
 }
-
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
 const albumsOfArtist = $("#cardGridLen");
-
 const sectionPostHeader = $(".section-playlist-post-header");
-
-// object app
 const app = {
   render__one: () => {
     try {
