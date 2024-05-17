@@ -12,10 +12,28 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url("../images/background/login_bg.jpg") center no-repeat ;
-  background-position: center;
-  background-size: cover;
+  background: #000; /* Chỉ định màu nền nếu hình ảnh không tải được */
 }
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px; /* Bạn có thể thay đổi theo ý muốn */
+  padding-top: 56.25%; /* 16:9 ratio */
+  overflow: hidden;
+  border: 1px solid #ccc; /* Tùy chọn, để thấy rõ phần tử */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 .container {
   display: flex;
@@ -38,7 +56,7 @@ body {
 
 .container .title_page h1 {
   font-size: 36px;
-  color: #8600ff;
+  color: #ff004e;
   text-align: center;
   user-select: none;
   -webkit-user-select: none;
@@ -111,7 +129,7 @@ body {
 .input-box input::placeholder,
 .input-box-1 input::placeholder,
 .input-box-2 input::placeholder{
-  color: #38d1ff;
+  color: #fff;
 }
 
 .input-box i, 
@@ -194,6 +212,7 @@ body {
   font-size: 16px;
   margin-top: 20px;
   transition: background-color 0.3s ease-in-out;
+  width: 100%;
 }
 
 .back-btn:hover {

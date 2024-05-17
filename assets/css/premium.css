@@ -3,6 +3,14 @@ ul {
   list-style: none;
 }
 
+@media (max-width: 992px) {
+
+  .premium .upgrade,
+  .premium .download {
+    display: none;
+    transition: var(--transition-3s-ease);
+  }
+}
 
 .main__heading {
   font-weight: 600;

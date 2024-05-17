@@ -43,22 +43,6 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <script>
-    // Kiểm tra xem có cookie chứa token hay không
-    function getCookie(name) {
-      const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-      return cookieValue ? cookieValue.pop() : '';
-    }
-
-    // Lấy giá trị của cookie 'accessToken'
-    const accessToken = getCookie('accessToken');
-    console.log(accessToken);
-
-    // Nếu không có token, chuyển hướng người dùng đến trang đăng nhập
-    if (!accessToken) {
-      window.location.href = '/sign_in.html';
-    }
-  </script>
   <!-- Title -->
   <title>Profile</title>
 </head>
@@ -210,8 +194,8 @@
           <a href="javascript:void(0)" onclick="supportChatMode()">
             <li><span class="far fa-comment"></span>Support</li>
           </a>
-          <a href="#">
-            <li><span class="far fa-star"></span>Upgrade Plan</li>
+          <a href="/premium.html">
+            <li><span class="far fa-star"></span>Upgrade Account</li>
           </a>
           <hr />
           <li class="btnLogout">
@@ -297,6 +281,8 @@
   <script src="./assets/js/profile.js"></script>
   <script src="./assets/js/app.js"></script>
   <script src="./assets/js/handleBtnToggle.js"></script>
+  <script src="./assets/js/helpers/checkAuth.js"></script>
+
   <script type="module" src="./assets/js/updateInforUser.js"></script>
 
 </body>

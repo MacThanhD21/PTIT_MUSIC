@@ -13,7 +13,14 @@ a {
   color: #fff; 
 }
 
+@media (max-width: 992px) {
 
+  .profile .upgrade,
+  .profile .download {
+    display: none;
+    transition: var(--transition-3s-ease);
+  }
+}
 .toggle {
   color: #fff !important;
 }
