@@ -82,44 +82,9 @@
 
 .card-playing-horizontal div h4 {
   transition: var(--transition-3s-ease);
-  font-size: 22px;
+  font-size: 10px;
 }
 
-.card-playing-horizontal div h4 span {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-  line-clamp: 1;
-  width: 170px;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.card-playing-horizontal div p span {
-  cursor: pointer;
-  font-size: var(--font-size-16);
-  color: var(--color-silver);
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  display: -webkit-box;
-  overflow: hidden;
-  line-clamp: 1;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.card-playing-horizontal div p span:hover {
-  transition: var(--transition-3s-ease);
-}
-
-/* CARD GROUP GRID */
-.card-group-grid {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: #fff;
-}
 
 .card-group-grid .card-category-vertical h4 {
   font-size: 20px;
@@ -184,8 +149,8 @@
 
 @media (max-width: 992px) {
 
-  .recentPlay .upgrade,
-  .recentPlay .download {
+  .favorite .upgrade,
+  .favorite .download {
     display: none;
     transition: var(--transition-3s-ease);
   }
