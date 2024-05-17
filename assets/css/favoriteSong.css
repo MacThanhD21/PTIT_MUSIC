@@ -13,7 +13,7 @@
   border-radius: var(--border-radius-mmmd);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   transition: var(--transition-3s-ease);
-  padding: 10px 20px 10px 10px;
+  padding: 10px;
   display: flex;
   margin: 0 10px 10px 0;
   align-items: center;
@@ -41,35 +41,6 @@
   color: var(--color-red);
 }
 
-.card-playing-horizontal figure div {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-playing-horizontal figure div span {
-  background-color: rgba(255, 255, 255, 0.700);
-  border-radius: var(--border-radius-full);
-  -webkit-backdrop-filter: blur(16px);
-  transition: var(--transition-3s-ease);
-  backdrop-filter: blur(16px);
-  position: absolute;
-  padding: 5px;
-  left: 15px;
-  top: 15px;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-playing-horizontal figure div span:hover {
-  background-color: rgba(255, 255, 255, 0.90);
-  transition: var(--transition-3s-ease);
-  transform: scale(1.1);
-}
-
 .card-playing-horizontal img {
   border-radius: var(--border-radius-mmmd);
   margin-right: 10px;
@@ -77,14 +48,37 @@
   height: 56px;
   width: 56px;
   max-width: unset;
-
 }
 
 .card-playing-horizontal div h4 {
   transition: var(--transition-3s-ease);
-  font-size: 10px;
+  font-size: 22px;
 }
 
+.card-playing-horizontal div p span {
+  cursor: pointer;
+  font-size: var(--font-size-16);
+  color: var(--color-silver);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  line-clamp: 1;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card-playing-horizontal div p span:hover {
+  transition: var(--transition-3s-ease);
+}
+
+/* CARD GROUP GRID */
+.card-group-grid {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
 
 .card-group-grid .card-category-vertical h4 {
   font-size: 20px;

@@ -1,21 +1,10 @@
-import { users } from "../data/users.js";
 import { songs } from "../data/songs.js";
-import { getCookie } from "../helpers/cookies.js";
 import { getAverageColor } from "../helpers/getAverageColor.js";
-// console.log(users);
+import { recentPlayedListId } from "../data/getUserById.js";
 
 const $$ = document.querySelectorAll.bind(document);
 
-// get id from cookie
-const userId = getCookie("accessToken");
-// console.log(userId);
-const user_fined = users.find((user) => user._id === userId);
-// console.log(user_fined);
-
-// Get list recent played
-const recentPlayedListId = user_fined.recentPlay;
-// console.log(recentPlayedListId);
-
+// At each file, this will be different
 const recentPlayedSongs = songs.filter((song) =>
   recentPlayedListId.includes(song._id)
 );
