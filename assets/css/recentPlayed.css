@@ -1,7 +1,7 @@
 
 /*========== SECTION TRENDING */
 .section-trending {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .section-trending>div:first-child h2 {
   font-size: 30px;
@@ -15,7 +15,6 @@
   transition: var(--transition-3s-ease);
   padding: 10px 20px 10px 10px;
   display: flex;
-  margin: 0 10px 10px 0;
   align-items: center;
   scroll-snap-align: start;
   justify-content: space-between;
@@ -91,7 +90,6 @@
   -webkit-line-clamp: 1;
   overflow: hidden;
   line-clamp: 1;
-  width: 170px;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -111,14 +109,6 @@
 
 .card-playing-horizontal div p span:hover {
   transition: var(--transition-3s-ease);
-}
-
-/* CARD GROUP GRID */
-.card-group-grid {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: #fff;
 }
 
 .card-group-grid .card-category-vertical h4 {
@@ -170,6 +160,7 @@
   -webkit-user-select: none;
   overflow: visible;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .card-playing-horizontal div p span {

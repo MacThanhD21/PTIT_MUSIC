@@ -10,3 +10,5 @@ const user_fined = users.find((user) => user._id === userId);
 // Get list recent played
 export const recentPlayedListId = user_fined.recentPlay;
 // console.log(recentPlayedListId);
+
+export const favoriteListId = user_fined.favoriteMusic;

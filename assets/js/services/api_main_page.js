@@ -3,7 +3,8 @@ import { albums } from "../data/albums.js";
 import { artists } from "../data/artists.js";
 import { Categories } from "../data/category.js";
 import { getAverageColor } from "../helpers/getAverageColor.js";
-
+import { recentPlayedListId } from "../data/getUserById.js";
+console.log(recentPlayedListId);
 // console.log(songs);
 
 const $ = document.querySelector.bind(document);
@@ -286,6 +287,8 @@ const app = {
           !e.target.classList.contains("fa-heart") &&
           !e.target.classList.contains("fa-download")
         ) {
+          recentPlayedListId.push(songs[index]._id);
+          // console.log(recentPlayedListId);
           // console.log(imageElement[index]);
           const clickedSong = e.currentTarget;
           // console.log(clickedSong);
