@@ -3,10 +3,8 @@
 #player {
   border-radius: 10px;
   height: 60vh;
-  /* position: sticky; */
   z-index: 100;
   top: 90px;
-  /* max-width: 98%; */
   margin: 0 auto;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(5px);
@@ -249,23 +247,6 @@
 .song.active .body h3 {
   animation: slideInLeft 7s ease infinite;
 }
-
-.song .author {
-  font-size: 16px;
-  white-space: nowrap;
-  color: #9a8478;
-}
-
-.song .favoriteSong {
-  padding: 0px 10px;
-  font-size: 20px;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @keyframes slideInLeft {
   0% {
     transform: translateX(100%);
@@ -281,5 +262,22 @@
     transform: translateX(-100%);
     opacity: 0;
   }
+}
+
+
+.song .author {
+  font-size: 16px;
+  white-space: nowrap;
+  color: #9a8478;
+}
+
+.song .favoriteSong {
+  padding: 0px 10px;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
