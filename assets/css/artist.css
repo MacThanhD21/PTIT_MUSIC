@@ -5,6 +5,15 @@
   background: linear-gradient(to right, #eef2f3, #8e9eab);
 }
 
+@media (max-width: 992px) {
+
+  .page-02 .upgrade,
+  .page-02 .download {
+    display: none;
+    transition: var(--transition-3s-ease);
+  }
+}
+
 .page-02 .back-top {
   bottom: 20px;
 }
@@ -35,6 +44,7 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   object-fit: cover;
 }
+
 .page-02 .card-grid img:hover {
   transform: scale(1.1) rotate(2deg);
   transition: var(--transition-3s-ease);
@@ -56,6 +66,7 @@
   height: 200px;
   width: 200px;
 }
+
 .page-02 .card-simple img {
   transition: var(--transition-3s-ease);
   border-radius: var(--border-radius-mmmd);

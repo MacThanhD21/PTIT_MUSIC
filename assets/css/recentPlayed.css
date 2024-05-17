@@ -6,3 +6,12 @@
   scroll-snap-type: x mandatory;
   max-width: 1600px;
 }
+
+@media (max-width: 992px) {
+
+  .recentPlay .upgrade,
+  .recentPlay .download {
+    display: none;
+    transition: var(--transition-3s-ease);
+  }
+}

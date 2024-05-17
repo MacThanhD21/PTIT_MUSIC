@@ -8,6 +8,15 @@ body {
   padding: 0;
 }
 
+@media (max-width: 992px) {
+
+  .gen .upgrade,
+  .gen .download {
+    display: none;
+    transition: var(--transition-3s-ease);
+  }
+}
+
 a {
   text-decoration: none;
   color: #fff;
