@@ -5,7 +5,7 @@ const handle__BtnToggle = () => {
   const toggleBtn2 = document.querySelector(".toggle-btn-2");
   const logoPage = document.querySelector(".inner-logo");
 
-  console.log(sidebar, toggleBtn1, toggleBtn2, logoPage);
+  // console.log(sidebar, toggleBtn1, toggleBtn2, logoPage);
 
   const main = document.querySelector(".main");
 

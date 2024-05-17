@@ -7,7 +7,7 @@ const updateUserInfo = () => {
   if (user) {
     const userAvatar = $("#imgUser");
     const userName = $(".container__username span");
-    console.log(userAvatar, userName);
+    // console.log(userAvatar, userName);
 
     userAvatar.src = user.profilePictureUrl;
     userName.textContent = user.username;

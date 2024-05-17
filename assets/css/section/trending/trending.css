@@ -96,10 +96,6 @@
   -webkit-user-select: none;
 }
 
-.card-playing-horizontal div h4 span:hover {
-  transition: var(--transition-3s-ease);
-}
-
 .card-playing-horizontal div p span {
   cursor: pointer;
   font-size: var(--font-size-16);
