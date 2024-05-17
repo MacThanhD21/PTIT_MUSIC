@@ -1,20 +1,21 @@
-import { songs } from "../data/songs.js";
-import { getAverageColor } from "../helpers/getAverageColor.js";
-import { favoriteListId } from "../data/getUserById.js";
+import {
+  songs
+} from "../data/songs.js";
+import {
+  getAverageColor
+} from "../helpers/getAverageColor.js";
+import {
+  favoriteListId
+} from "../data/getUserById.js";
 
 const $$ = document.querySelectorAll.bind(document);
 const $ = document.querySelector.bind(document);
-
 const favoriteSongs = songs.filter((song) => favoriteListId.includes(song._id));
-console.log(favoriteSongs);
-
-// Render recent played
+// console.log(favoriteSongs);
 const trending_container = $("#treding_container .card-group-grid");
 
-// console.log(trending_container);
-
 const recentPlayed = {
-  render: function () {
+  render: function() {
     const html = favoriteSongs
       .map((song) => {
         return `
@@ -86,8 +87,12 @@ const recentPlayed = {
             // console.log(imgElement);
             imgElement.src = imageElement[index].src;
             imgElement.setAttribute("crossOrigin", "anonymous");
-            imgElement.onload = function () {
-              const { R, G, B } = getAverageColor(imgElement, 4);
+            imgElement.onload = function() {
+              const {
+                R,
+                G,
+                B
+              } = getAverageColor(imgElement, 4);
               // console.log(R, G, B);
               const color = `rgb(${R}, ${G}, ${B})`;
               song.style.backgroundColor = color;
@@ -160,7 +165,7 @@ const recentPlayed = {
       });
     });
   },
-  start: function () {
+  start: function() {
     this.render();
     this.handlePlayMusic();
   },

@@ -5,21 +5,13 @@ const $ = document.querySelector.bind(document);
 const signInForm = $("#Sign__in");
 const registerLink = $(".register-link a");
 const backBtn = $(".back-btn");
-
-
-// Lấy giá trị của cookie 'accessToken'
-const accessToken = getCookie("accessToken");
-
 const usernameInput = $("#username-sign-in");
 const passwordInput = $("#password-sign-in");
-
-
 const passwordIconLock = document.querySelector(".fa-lock");
 const passwordIconUnlock = document.querySelector(".fa-unlock");
 const iconPassword = document.querySelector(".icon-password");
 
 try {
-  // show/hide password
   iconPassword.addEventListener("click", function () {
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
@@ -40,22 +32,10 @@ try {
 
   registerLink.addEventListener("click", function (event) {
     event.preventDefault();
-
     signInForm.classList.remove("reactive");
-    // Toggle active class between login and sign-up forms
     signInForm.classList.toggle("active");
     signUpForm.classList.toggle("active");
   });
-
-  // Lắng nghe sự kiện khi người dùng nhập vào ô tên người dùng
-  // usernameInput.addEventListener('input', function (event) {
-  //   console.log(event.target.value);
-  // });
-
-  // // Lắng nghe sự kiện khi người dùng nhập vào ô mật khẩu
-  // passwordInput.addEventListener('input', function (event) {
-  //   console.log(event.target.value);
-  // });
 
   // Hàm đăng nhập
   const login = async (user, password) => {

@@ -288,8 +288,6 @@ const app = {
           !e.target.classList.contains("fa-download")
         ) {
           recentPlayedListId.push(songs[index]._id);
-          // console.log(recentPlayedListId);
-          // console.log(imageElement[index]);
           const clickedSong = e.currentTarget;
           // console.log(clickedSong);
           const otherSongs = Array.from(songItems).filter(
@@ -333,8 +331,6 @@ const app = {
             pauseBtn[index].style.display = "none";
           }
         }
-
-        // Add Event For Song
         audio[index].addEventListener("ended", () => {
           song.classList.remove("playing");
           playBtn[index].style.display = "inline-block";
@@ -343,42 +339,26 @@ const app = {
       });
     });
 
-    // Like Music
-
     likeBtn.forEach((btn) => {
       btn.addEventListener("click", () => {
         btn.classList.toggle("active");
       });
     });
 
-    // Download Music
-
     downloadBtn.forEach((btn, index) => {
       btn.addEventListener("click", () => {
-        // Tải xuống tệp MP3
         const audioElement = audio[index];
         const audioSource = audioElement.src;
         const downloadLink = document.createElement("a");
-        // gán đường link
         downloadLink.href = audioSource;
-        // xét thuộc tính cho thẻ a
         downloadLink.setAttribute("target", "_blank");
         downloadLink.setAttribute("rel", "noopener noreferrer");
         downloadLink.setAttribute("download", `${songs[index].title}`);
-        // thêm vào body
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
       });
     });
-
-    // trendingSection.addEventListener("click", () => {
-    //   musicPlayer.classList.add("active");
-    // });
-
-    // musicPlayer.addEventListener("click", () => {
-    //   musicPlayer.classList.remove("active");
-    // });
   },
 
   start: () => {
