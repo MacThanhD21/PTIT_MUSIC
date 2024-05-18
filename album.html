@@ -32,7 +32,7 @@
 </head>
 
 <body id="Top" class="page-01 switchMode">
-  <div id="container_loader"><span class="loader"></span></div>
+  <!-- <div id="container_loader"><span class="loader"></span></div> -->
   <section class="side-bar">
     <div class="section-one">
       <div class="logo-menu">
@@ -126,6 +126,94 @@
           <div class="progress-bar"><input id="progress" class="progress" type="range" value="0" step="1" min="0"
               max="100" title="Progress"></div>
           <div class="remainTime"><span></span></div>
+          <!-- Volume -->
+          <style>
+            .volume {
+              display: none;
+              position: absolute;
+              top: -30px;
+              left: 27px;
+              transform: rotate(-90deg);
+              transform-origin: left bottom;
+              transition: all 0.5s ease-in-out;
+            }
+
+            .volume.active {
+              display: block;
+            }
+
+            .volume input[type="range"] {
+              -webkit-appearance: none;
+              width: 150px;
+              height: 16px;
+              background: #d3d3d3;
+              border-radius: 5px;
+              outline: none;
+              opacity: 0.7;
+              transition: opacity 0.2s;
+            }
+
+            .volume input[type="range"]:hover {
+              opacity: 1;
+            }
+
+            .volume input[type="range"]::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              width: 20px;
+              height: 20px;
+              background: #000;
+              border-radius: 10%;
+              cursor: pointer;
+              transition: background 0.2s;
+            }
+
+            .volume input[type="range"]::-moz-range-thumb {
+              width: 20px;
+              height: 20px;
+              background: #000;
+              border-radius: 10%;
+              cursor: pointer;
+              transition: background 0.2s;
+            }
+
+            .volume-container {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-left: 10px;
+            }
+
+            .fa-volume-low {
+              font-size: 26px;
+              cursor: pointer;
+              width: 30px;
+              height: 30px;
+            }
+          </style>
+          <div class="volume-container">
+            <div class="volume">
+              <input type="range" value="100" step="1" min="0" max="100" title="Volume">
+            </div>
+            <i class="fa-solid fa-volume-low"></i>
+          </div>
+          <script>
+            const volumeContainer = document.querySelector('.volume-container');
+            const volume = document.querySelector('.volume');
+            const icon = document.querySelector('.fa-volume-low');
+            icon.addEventListener('click', () => {
+              console.log('click');
+              volume.classList.toggle('active');
+            });
+            console.log(volume);
+            volume.addEventListener('input', (e) => {
+              const value = e.target.value;
+              const audio = document.querySelector('.playing #audio') || document.querySelector('#audio');
+              console.log(audio);
+              audio.volume = value / 100;
+            });
+          </script>
+          <!-- End Volume -->
         </div><audio id="audio" src="" autoplay></audio>
       </div>
       <div class="playlist"></div>
