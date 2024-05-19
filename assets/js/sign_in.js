@@ -72,6 +72,8 @@ try {
         // Lưu token vào cookie
         setCookie("accessToken", response.result._id, 1); // Thời gian sống của cookie là 1 ngày
 
+        localStorage.setItem("userInfoDisplayed", "true")
+
         // Chuyển hướng người dùng đến trang chính
         window.location.href = "/index.html";
       } else {

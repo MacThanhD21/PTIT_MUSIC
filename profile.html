@@ -244,7 +244,7 @@
                 <!-- Form Group (username)-->
                 <div class="mb-3">
                   <label class="small mb-1" for="inputUsername">Username </label>
-                  <input class="form-control" id="inputUsername" type="text" placeholder="Username" value="" />
+                  <input disabled class="form-control" id="inputUsername" type="text" placeholder="Username" value="" />
                 </div>
 
                 <!-- Form Group (email address)-->
@@ -268,6 +268,24 @@
         </div>
       </div>
     </div>
+
+    <!-- <div class="authentication-student">
+      <p class="authentication-student-text">Nếu bạn là sinh viên, <a href="#" id="student-link">click here</a></p>
+      <div id="student-form" style="display: none;">
+        <h3>Xác thực thông tin sinh viên</h3>
+        <form id="verification-form">
+          <div class="mb-3">
+            <label for="studentID" class="form-label">Student ID</label>
+            <input type="text" class="form-control" id="studentID" placeholder="Enter your student ID" required>
+          </div>
+          <div class="mb-3">
+            <label for="studentEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="studentEmail" placeholder="Enter your student email" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div> -->
   </section>
 
 
@@ -280,10 +298,12 @@
     crossorigin="anonymous"></script>
 
   <!-- Main JS -->
-  <script src="./assets/js/profile.js"></script>
+  <script type="module" src="./assets/js/profile.js"></script>
   <script src="./assets/js/app.js"></script>
   <script src="./assets/js/handleBtnToggle.js"></script>
   <script src="./assets/js/helpers/checkAuth.js"></script>
+  <script src="./assets/js/logout.js"></script>
+
 
   <script type="module" src="./assets/js/updateInforUser.js"></script>
 

@@ -3,6 +3,7 @@ const logoutButton = document.querySelector('.logoutBtn');
 logoutButton.addEventListener('click', function () {
   if (accessToken) {
     deleteCookie('accessToken');
+    localStorage.removeItem('userInfoDisplayed');
     window.location.href = '/sign_in.html';
   } else {
     window.location.href = '/sign_in.html';
