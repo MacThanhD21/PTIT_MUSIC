@@ -1,18 +1,18 @@
-// if ("serviceWorker" in navigator) {
-//   window.addEventListener("load", function () {
-//     navigator.serviceWorker.register("/assets/js/serviceWorker.js").then(
-//       function (registration) {
-//         console.log(
-//           "ServiceWorker registration successful with scope: ",
-//           registration.scope
-//         );
-//       },
-//       function (err) {
-//         console.log("ServiceWorker registration failed: ", err);
-//       }
-//     );
-//   });
-// }
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/assets/js/serviceWorker.js").then(
+      function (registration) {
+        console.log(
+          "ServiceWorker registration successful with scope: ",
+          registration.scope
+        );
+      },
+      function (err) {
+        console.log("ServiceWorker registration failed: ", err);
+      }
+    );
+  });
+}
 
 document.addEventListener("click", function (event) {
   const dropdown = document.getElementById("dropdownMenu");

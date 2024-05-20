@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+
+<body>
+  <!-- Phần HTML -->
+  <audio id="audioPlayer" controls>
+    <source id="audioSource" src="/assets/music/diealone.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Đăng ký Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/assets/js/serviceWorker.js').then(function (registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (error) {
+          console.log('ServiceWorker registration failed: ', error);
+        });
+      });
+    }
+
+  </script>
+
+  <script>
+    let db;
+    const request = indexedDB.open('musicDB', 1);
+
+    request.onupgradeneeded = function (event) {
+      db = event.target.result;
+
+      // Tạo các Object Store
+      db.createObjectStore('songs', { keyPath: '_id' });
+      db.createObjectStore('albums', { keyPath: '_id' });
+      db.createObjectStore('categories', { keyPath: '_id' });
+      db.createObjectStore('singers', { keyPath: '_id' });
+    };
+
+    request.onsuccess = function (event) {
+      db = event.target.result;
+    };
+
+    request.onerror = function (event) {
+      console.error('IndexedDB error:', event.target.errorCode);
+    };
+
+    function saveData(storeName, data) {
+      const transaction = db.transaction([storeName], 'readwrite');
+      const store = transaction.objectStore(storeName);
+      data.forEach(item => store.put(item));
+      transaction.oncomplete = function () {
+        console.log(`All data for ${storeName} stored successfully.`);
+      };
+      transaction.onerror = function (event) {
+        console.error('Transaction error:', event.target.errorCode);
+      };
+    }
+
+    // Ví dụ dữ liệu
+    const songs = [
+      {
+        "_id": "65d38a7a94af16ac796b911b",
+        "title": "Die Alone",
+        "artist": "K-391, Hoaprox, Nick Strane",
+        "genre": "Nhạc Trẻ",
+        "link": "https://storage.googleapis.com/ptitwebmusicspring24.appspot.com/songs/1712284221276_Die%20Alone.mp3?GoogleAccessId=firebase-adminsdk-bsxkl%40ptitwebmusicspring24.iam.gserviceaccount.com&Expires=1743820158&Signature=ZS8vWNC2oGpfG45dLytNcVAtR856E%2BNgX%2FCkp%2FNSUEMuOOT9cZiWCmum0OlZ9vL%2FT%2FQFto0OSUwsc6781TFM9mpIv69gj5A5hOxZwXA2vFmVRgxlhCnxBEQoUTbTu4uOVkafnYbdbzDMmkj69e8cZezXSu2kF8JHCWXqeMoIVUMRHXPa%2F9d2M9ZJLWOV3YwKgUaV8hR28rwQU%2Be%2Ba1rkeMbptdeht9mhdrF9MV%2Bc2SW0mUswkCSEGg%2B%2B%2B1qEDOUg2rsrre1FlSlVclkJPHxQn%2Fa6%2BL9Z7gU5Mm5DmzZ1nGtb5FmUSLw5F6C%2F68j4PHPZX6FrKlgBvReUzJXRAow%2BsQ%3D%3D",
+        "imagecover": "https://i.scdn.co/image/ab67616d0000b273d8d09b63432a780cf5d7f313"
+      },
+      {
+        "_id": "65de900d2fe9afde34ce4768",
+        "title": "Thiên lý ơi",
+        "artist": "J97",
+        "genre": "Ballad",
+        "link": "https://storage.googleapis.com/ptitwebmusicspring24.appspot.com/songs/1709084682805_Thi%C3%83%C2%AAn%20L%C3%83%C2%BD%20%C3%86%C2%A0i.mp3?GoogleAccessId=firebase-adminsdk-bsxkl%40ptitwebmusicspring24.iam.gserviceaccount.com&Expires=1740620560&Signature=LUb6fz7ff1WNNIJCtCGGeLPf4pRcFF7Z8YT0w6jDltsuvVUB6uHYK9itQ5EOa9jl4UQAXknN7Q0QMV7qa3IWraSo6lHGsqVW%2FHmpBvlcskpQIDPqpWY%2FpiCy6RM3YfkSSKLGNYE7LjuARcWqqrpPsAVZr0rpgdfkylVRZt7ZZH8jh51vFj5o000wQfT4HBZGuib1jffhg85o39nsp0y4U3sfVUYBeeKcqpwVhIdHSZrX5EFNibugvguXWUIObUXMzZAwO43tRoRda0WH4c1gY4EWgdggsx43wKDBmst69Ga56%2FUQDXQJuqJfA5fboZlMBPynVEWOE1QuQe4fmkRXJw%3D%3D",
+        "imagecover": "https://i.scdn.co/image/ab67616d0000b27333a31cc1175e787bfea17a65",
+        "__v": 0
+      },
+      {
+        "_id": "65e1c8e42edc2bfdfd14f48a",
+        "title": "ANGEL",
+        "artist": "VSOUL",
+        "genre": "Rap Melody",
+        "link": "https://storage.googleapis.com/ptitwebmusicspring24.appspot.com/songs/1709295840295_ANGEL.mp3?GoogleAccessId=firebase-adminsdk-bsxkl%40ptitwebmusicspring24.iam.gserviceaccount.com&Expires=1740831507&Signature=b8QuXr2e8iCKJY69Ccbr015uIZxFOUM4Abyoh3p90DSwl098kQplLEd9TXp8FRh2%2Blkf%2BDdaYsgktp0o7VzVUm2beMvurpAHE2YDW2GsrEluzsbIoH9eiUXzEI8v%2BGm3r%2Bqu6mtSyTOEavLD42M9LcBlBaq2kt50C%2FLYAaz91TwVoVyZnIp%2BGlZ0t8sEcWlpI8bTnHzjU7H37192AsE0RiqqRaTJx6HSz0oyilI7JmwAaX4ytx%2FMPg%2FMJcD4rDkBsBrt%2BoquNMSMCALjAu7xgYSQI7SZRpnPwknWhKjDcgNE5vTEIg5Bw8oCHNxQLBVGCz42eHGSXbNhlqudjIPkDA%3D%3D",
+        "imagecover": "https://i.scdn.co/image/ab67616d0000b273b8cfbad63020511dd20b49fa",
+        "__v": 0
+      }
+    ];
+
+    // Lưu trữ dữ liệu vào các Object Store
+    saveData('songs', songs);
+    saveData('albums', albums);
+    saveData('categories', categories);
+    saveData('singers', singers);
+
+    function getData(storeName, callback) {
+      const transaction = db.transaction([storeName], 'readonly');
+      const store = transaction.objectStore(storeName);
+      const request = store.getAll();
+
+      request.onsuccess = function (event) {
+        callback(event.target.result);
+      };
+
+      request.onerror = function (event) {
+        console.error('Transaction error:', event.target.errorCode);
+      };
+    }
+
+    // Ví dụ lấy dữ liệu từ Object Store 'songs'
+    getData('songs', function (data) {
+      console.log('Songs:', data);
+      // Hiển thị danh sách bài hát hoặc làm bất cứ điều gì với dữ liệu này
+    });
+
+    // Phát nhạc từ dữ liệu IndexedDB
+    function playSong(songId) {
+      getData('songs', function (songs) {
+        const song = songs.find(song => song._id === songId);
+        if (song) {
+          const audioSource = document.getElementById('audioSource');
+          const audioPlayer = document.getElementById('audioPlayer');
+          audioSource.src = song.link;
+          audioPlayer.load();
+          audioPlayer.play();
+        }
+      });
+    }
+
+    // Gọi hàm playSong với ID bài hát muốn phát
+    playSong('65d38a7a94af16ac796b911b');
+
+  </script>
+</body>
+
+</html>

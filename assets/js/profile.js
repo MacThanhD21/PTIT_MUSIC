@@ -45,8 +45,9 @@ const API_UPDATE_USER =
 async function uploadImage(file) {
   try {
     const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", "your_upload_preset"); // Replace with your upload preset
+    formData.append("public_id", )
+    formData.append("allowed_formats", file);
+    formData.append("upload_preset", "ml_default"); // Replace with your upload preset
 
     const response = await fetch(
       `https://api.cloudinary.com/v1_1/db7oouu4n/image/upload`,
@@ -57,6 +58,7 @@ async function uploadImage(file) {
     );
 
     const data = await response.json();
+    console.log(data);
     if (data.secure_url) {
       return data.secure_url;
     } else {
