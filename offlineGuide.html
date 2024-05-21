@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GenMusic</title>
+  <title>Offline Guide</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -119,6 +119,8 @@
             <span class="link-name" style="--i: 8"> Generate Music </span>
           </a>
         </li>
+        <li class="list-item"><a href="/offlineGuide.html"><i class="fa-solid fa-download"></i> <span class="link-name"
+              style="--i:9">Offline Guide</span></a></li>
       </ul>
     </div>
   </section>
@@ -209,8 +211,60 @@
     </nav>
 
     <!-- MAIN -->
+    <style>
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 50px;
+      }
 
+      .step {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
 
+      img {
+        width: 100%;
+        max-width: 180px;
+        border-radius: 10px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        transition: all 0.3s ease-in-out;
+      } 
+      h2:hover {
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+      }
+    </style>
+    <div class="container">
+      <div class="step">
+        <h2>Step 1: Install App</h2>
+        <img src="./assets/images/offlineGuide/QRPTITMUSIC 1.png" alt="">
+      </div>
+      <div class="step">
+        <img src="./assets/images/offlineGuide/step2.png" alt="">
+        <h2>Step 2: Open Application </h2>
+      </div>
+      <div class="step">
+        <h2>Step 3: Click the download button </h2>
+        <img src="./assets/images/offlineGuide/step3.png" alt="">
+      </div>
+      <div class="step">
+        <img src="./assets/images/offlineGuide/step4.png" alt="">
+        <h2>Step 4: Setting -> Offline Songs </h2>
+      </div>
+    </div>
   </section>
 
   <!-- JS File -->
@@ -230,7 +284,7 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
 
-  
+
 </body>
 
 </html>

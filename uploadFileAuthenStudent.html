@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .upload-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .upload-container h2,
+    .upload-container p {
+      margin-top: 0;
+    }
+
+    .file-upload {
+      border: 2px dashed #ccc;
+      padding: 20px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .file-upload input[type="file"] {
+      display: none;
+      /* Hide the default input */
+    }
+
+    .file-upload label {
+      cursor: pointer;
+      color: #1db954;
+    }
+
+    .file-upload label span {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="upload-container">
+    <h2>Upload one of the following documents.</h2>
+    <p>Documents will be reviewed in a few minutes by staff at SheerID, a verification service provider. <a
+        href="#">Learn
+        more here.</a></p>
+    <p>Upload your school-issued document that shows:</p>
+    <ul>
+      <li>Your full name</li>
+      <li>Your school</li>
+      <li>Date proving enrollment for the current term (or within the last 3 months)</li>
+    </ul>
+    <p>Acceptable examples include:</p>
+    <ul>
+      <li>School ID card with expiration date</li>
+      <li>Class schedule</li>
+      <li>Tuition receipt</li>
+    </ul>
+    <form action="#" method="post" enctype="multipart/form-data">
+      <div class="file-upload">
+        <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png, .pdf, .gif, .bmp">
+        <label for="file">Drag & drop your files here or <span>browse</span></label>
+      </div>
+      <p>File must be .jpg, .jpeg, .png, .pdf, .gif, or .bmp</p>
+    </form>
+  </div>
+</body>
+
+</html>

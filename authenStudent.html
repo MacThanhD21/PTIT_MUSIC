@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student verify</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 30px auto;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="tel"],
+    select {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    button {
+      background-color: #1db954;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1ed760;
+    }
+
+    a {
+      color: #1db954;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      margin: 10px 0 20px 0;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      margin-right: 5px;
+      /* Adds space between the checkbox and the label */
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #1db954;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      background-color: #1ed760;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Tell us about yourself.</h2>
+    <p>Enter your name as it appears on your school records. PTIT MUSIC uses SheerID to verify your eligible student
+      status. <a href="#">Learn more here.</a></p>
+    <form action="#" method="post">
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="vietnam">Vietnam</option>
+      </select>
+
+      <label for="school">School</label>
+      <input type="text" id="school" name="school">
+
+      <label for="firstname">First name</label>
+      <input type="text" id="firstname" name="firstname">
+
+      <label for="lastname">Last name</label>
+      <input type="text" id="lastname" name="lastname">
+
+      <label for="dob">Date of birth</label>
+      <input type="date" id="dob" name="dob">
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email">
+
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" id="mobile" name="mobile">
+
+      <p>By submitting this form with a mobile number, you consent to receive SMS/text messages for verification
+        purposes. Standard phone carrier text messaging (SMS) and data rates may apply.</p>
+      <p>By checking this box and clicking "Next," you consent to the use of your information for verification purposes.
+        Your information may be transferred to the United States and will be treated according to Spotify's privacy
+        policy. We will not sell, rent, or use your information for marketing purposes.</p>
+      <div class="checkbox-container">
+        <input type="checkbox" id="consent" name="consent">
+        <label for="consent">I agree</label>
+      </div>
+
+
+      <a href="/uploadFileAuthenStudent.html" class="button">Next</a>
+
+    </form>
+  </div>
+</body>
+
+</html>
