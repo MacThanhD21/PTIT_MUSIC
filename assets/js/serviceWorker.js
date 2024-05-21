@@ -2,7 +2,7 @@ var CACHE_NAME = "my-site-cache-v2";
 var urlsToCache = [
   "/",
   "/test.html",
-  "index.html",
+  "/index.html",
   "/assets/css/style.css",
   // "/css/responsive.css",
   "/assets/music/diealone.mp3",

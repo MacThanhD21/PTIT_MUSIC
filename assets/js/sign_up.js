@@ -1,4 +1,5 @@
 const usernameInputSignUp = document.getElementById("username-Sign-up");
+const emailInputSignUp = document.getElementById("email-Sign-up");
 const rePassWordInput = document.getElementById("re-password");
 const passwordInputSignUp = document.getElementById("password-Sign-up");
 
@@ -21,7 +22,7 @@ signUpForm.addEventListener("submit", async function (event) {
   }
 
   const user = usernameInputSignUp.value;
-  const email = user + "@gmail.com";
+  const email = emailInputSignUp.value;
   const password = passwordInputSignUp.value;
 
   try {

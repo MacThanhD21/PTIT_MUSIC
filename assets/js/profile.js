@@ -118,7 +118,7 @@ saveChangesButton.addEventListener("click", async function () {
 
       // Update user cookie
       const userCookieValue = JSON.parse(getCookie("user"));
-      userCookieValue.profilePictureUrl = userDataUpdated.profilePictureUrl;
+      // userCookieValue.profilePictureUrl = userDataUpdated.profilePictureUrl;
       userCookieValue.username = userDataUpdated.username;
       userCookieValue.email = userDataUpdated.email;
       userCookieValue.password = userDataUpdated.password;

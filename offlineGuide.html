@@ -31,22 +31,19 @@
   <!-- CSS File -->
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/base.css">
-  <link rel="stylesheet" href="./assets/css/genmusic.css">
   <link rel="stylesheet" href="./assets/css/avatar/avatar.css">
   <link rel="stylesheet" href="./assets/css/main/main.css">
   <link rel="stylesheet" href="./assets/css/mode/mode.css">
   <link rel="stylesheet" href="./assets/css/navbar/navbar.css">
   <link rel="stylesheet" href="./assets/css/side-bar/side-bar.css">
   <link rel="stylesheet" href="./assets/css/switchMode/switchMode.css">
-
-  
   <!-- Axios -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <style>
 </style>
 
-<body class="gen switchMode">
+<body class="offline switchMode">
 
   <section class="side-bar">
     <!-- Section-one -->
@@ -211,71 +208,9 @@
       </ul>
     </nav>
 
-    <!-- Main -->
-    <div class="Container">
-      <!-- GenMusic -->
-      <div class="container mt-1">
-        <div class="row d-flex flex-column align-items-center justify-content-center bd-highlight mb-3">
-          <div class="col-md-8">
-            <div class="text-center">
-              <h1 class="my-4">GenMusic</h1>
-            </div>
-          </div>
-          <div class="desc d-flex justify-content-center align-items-center">
-            <p>Unleash the power of your imagination as our music generator transforms your feelings into captivating melodies.</p>
-          </div>
+    <!-- MAIN -->
 
 
-          <div class="col-lg-8 md-6">
-            <div class="inner-genmusic my-4">
-              <div class="container-fluid">
-                <form class="d-flex" onsubmit="event.preventDefault();">
-                  <input class="form-control me-2" type="search" placeholder="Fill your mood..." aria-label="Search"
-                    spellcheck="false">
-                  <button class="btn btn-outline-success" type="submit">Generate</button>
-                </form>
-              </div>
-            </div>
-
-            <div class="loader my-3"></div>
-            <div class="result my-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title mx-1">Generated Music</h5>
-                  <div class="row genMusicItem">
-                    <!-- Item 1 -->
-                    <div class="col-lg-6 col-md-6 item item-1">
-                      <div class="desc-title">
-                        Melody
-                      </div>
-                      <div class="genMusicItem__img">
-                        <img src="./assets/images/data_fake/dcc8f9574b7beee051743c8312e1b4f5.jpg" alt="music"
-                          width="100" height="100">
-                      </div>
-                      <div class="genMusicItem__info">
-                        <h6 class="genMusicItem__title"></h6>
-                        <p class="genMusicItem__author"></p>
-                      </div>
-                      <div class="genMusicItem__action">
-                        <div class="btn_HandleMusic">
-                          <button title="play music" class="btn btn-primary">
-                            <i class="fa-solid fa-play"></i>
-                          </button>
-                          <button title="pause music" class="btn btn-danger">
-                            <i class="fa-solid fa-stop"></i>
-                          </button>
-                        </div>
-                        <audio src=""></audio>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- JS File -->
