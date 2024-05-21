@@ -52,7 +52,7 @@
     }
 
     button {
-      background-color: #1db954;
+      background-color: red;
       color: white;
       padding: 10px 15px;
       border: none;
@@ -61,11 +61,11 @@
     }
 
     button:hover {
-      background-color: #1ed760;
+      background-color: red;
     }
 
     a {
-      color: #1db954;
+      color: red;
       text-decoration: none;
     }
 
@@ -90,7 +90,7 @@
 
     .button {
       display: inline-block;
-      background-color: #1db954;
+      background-color: red;
       color: white;
       padding: 10px 15px;
       text-align: center;
@@ -102,7 +102,7 @@
     }
 
     .button:hover {
-      background-color: #1ed760;
+      background-color: red;
     }
   </style>
 </head>
@@ -140,7 +140,7 @@
       <p>By submitting this form with a mobile number, you consent to receive SMS/text messages for verification
         purposes. Standard phone carrier text messaging (SMS) and data rates may apply.</p>
       <p>By checking this box and clicking "Next," you consent to the use of your information for verification purposes.
-        Your information may be transferred to the United States and will be treated according to Spotify's privacy
+        Your information may be transferred to the United States and will be treated according to PTIT MUSIC's privacy
         policy. We will not sell, rent, or use your information for marketing purposes.</p>
       <div class="checkbox-container">
         <input type="checkbox" id="consent" name="consent">
@@ -158,7 +158,7 @@
       const eduRegex = /\.edu\.vn$/;
       if (!regex.test(email) || !eduRegex.test(email)) {
         const emailError = document.getElementById('emailError')
-        emailError.textContent = "Please enter a valid .edu.vn student email.";
+        emailError.textContent = "Please enter a valid student email.";
         emailError.style.color = "red";
         return false;
       }

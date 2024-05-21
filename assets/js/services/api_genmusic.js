@@ -23,21 +23,28 @@ async function getMusic() {
   warning.style.transition = "all 0.5s ease-in-out";
   loadingIndicator.style.display = "block";
   loadingIndicator.style.transition = "all 0.5s ease-in-out";
-  const audioData = await musicGen({
-    sound_file: "",
-  });
+  try {
+    const audioData = await musicGen({
+      sound_file: "",
+    });
 
-  if (audioData) {
-    updateUI(audioData);
-    result.style.display = "block";
-    success.style.display = "block";
+    if (audioData) {
+      updateUI(audioData);
+      result.style.display = "block";
+      success.style.display = "block";
+      warning.style.display = "none";
+      loadingIndicator.style.display = "none";
+      console.log(audioData);
+      setTimeout(() => {
+        success.style.display = "none";
+        success.style.transition = "all 0.3s ease";
+      }, 2000);
+    }
+  } catch (error) {
+    alert("Server hoạt động không ổn định. Vui lòng thử lại sau.");
     warning.style.display = "none";
     loadingIndicator.style.display = "none";
-    console.log(audioData);
-    setTimeout(() => {
-      success.style.display = "none";
-      success.style.transition = "all 0.3s ease";
-    }, 2000);
+    console.error(error);
   }
 }
 
