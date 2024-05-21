@@ -4,7 +4,7 @@ input.addEventListener("input", function () {
   console.log(input.value);
 });
 
-const baseUrl = `https://5fc2-35-204-254-58.ngrok-free.app/musgen`;
+const baseUrl = `https://e21c-34-168-7-227.ngrok-free.app/musgen`;
 
 async function musicGen(payload) {
   const url = `${baseUrl}?prompt=${input.value}&duration=${20}`;
@@ -16,7 +16,11 @@ async function musicGen(payload) {
 
 async function getMusic() {
   const loadingIndicator = document.querySelector(".loader");
+  const warning = document.querySelector(".warning");
   const result = document.querySelector(".result");
+  const success = document.querySelector(".success");
+  warning.style.display = "block";
+  warning.style.transition = "all 0.5s ease-in-out";
   loadingIndicator.style.display = "block";
   loadingIndicator.style.transition = "all 0.5s ease-in-out";
   const audioData = await musicGen({
@@ -24,10 +28,16 @@ async function getMusic() {
   });
 
   if (audioData) {
-    console.log(audioData);
     updateUI(audioData);
-    loadingIndicator.style.display = "none";
     result.style.display = "block";
+    success.style.display = "block";
+    warning.style.display = "none";
+    loadingIndicator.style.display = "none";
+    console.log(audioData);
+    setTimeout(() => {
+      success.style.display = "none";
+      success.style.transition = "all 0.3s ease";
+    }, 2000);
   }
 }
 
