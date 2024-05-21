@@ -2,133 +2,94 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Payment Gateway form</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <link rel="shortcut icon" href="./assets/images/logo/JPEG/main_logo.png" type="image/x-icon">
-
-  <link rel="stylesheet" href="./assets/css/paymentGateway.css">
+    <!-- Add meta tags for mobile and IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> PayPal Checkout Integration | Button Styles </title>
 </head>
 
 <body>
-  <header id="header_area">
-    <div class="wrapper">
-      <nav id="nav">
-        <ul>
-          <li><a href="#">Form One</a></li>
-          <li><a href="#">Form Two</a></li>
-          <li><a href="#">Form Three</a></li>
-          <li><a href="#">Form Four</a></li>
-        </ul>
-      </nav>
-    </div>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+    <!-- Set up a container element for the button -->
+    <div id="paypal-button-container"></div>
 
-  </header>
-  <section id="form-one">
-    <div class="payment-gateway-area">
-      <div class="payment-details" data-aos="fade-up">
-        <div class="box box-1">
-          <p>Total to Pay</p>
-          <h5>$128</h5>
-        </div>
-        <div class="box box-2">
-          <p>How would you like to pay?</p>
-          <div class="payment-selection">
-            <form action="">
-              <table>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div>
-                        <input class="radio-btn" type="radio" value="mastercard" checked name="payment1"
-                          id="payment-input-1"> <label for="payment-input-1">Credit Card</label>
-                      </div>
+    <!-- Include the PayPal JavaScript SDK -->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AeEN4IxyAYGxpZb1Gtc3cRPJSLxQCl49VpcCBkkbXisZpXmwpXNpDcoqQZ3tr9Udftoi5O4VyeXVXUIV&currency=USD"></script>
 
-                      <div class="img-box"><img src="./assets/images/img/mastercard.png" alt=""></div>
-                      <div class="img-box"><img src="./assets/images/img/visa-card.png" alt=""></div>
-                    </td>
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
 
-                  </tr>
-                  <tr>
-                    <td>
-                      <div>
-                        <input class="radio-btn" value="paypal" type="radio" name="payment1" id="payment-input-2">
-                        <label for="payment-input-2">Paypal</label>
-                      </div>
-                      <div class="img-box"><img src="./assets/images/img/paypal.png" alt=""></div>
-                    </td>
+            style: {
+                color: 'blue',
+                shape: 'pill',
+                label: 'pay',
+                height: 40
+            },
 
-                  </tr>
-                </tbody>
-              </table>
-            </form>
-          </div>
-        </div>
-        <div class="box box-3">
-          <a href="#"><i class="fa-solid fa-arrow-left"></i> Back to Order Overview</a>
-        </div>
-      </div>
-      <div class="payment-form" data-aos="fade-up">
-        <div class="card-form">
-          <h1>Your Payment Details</h1>
-          <div class="box box1">
-            <label for="pay-form-inout-1">Name on Card</label>
-            <input type="text" id="pay-form-inout-1" placeholder="MD OMAR FARUK">
-          </div>
-          <div class="box box2">
-            <label for="pay-form-inout-2">Card Number</label>
-            <input type="text" placeholder="XXXX XXXX XXXX XXXX">
-            <img src="./assets/images/img/visa-card.png" alt="">
-          </div>
-          <div class="box box3">
-            <div class="inner-box1">
-              <label for="">Expiry</label>
-              <input type="text" name="" id="" placeholder="MM/YY">
+            // Call your server to set up the transaction
+            createOrder: function (data, actions) {
+                return fetch('/demo/checkout/api/paypal/order/create/', {
+                    method: 'post'
+                }).then(function (res) {
+                    return res.json();
+                }).then(function (orderData) {
+                    return orderData.id;
+                });
+            },
 
-            </div>
-            <div class="inner-box2">
+            // Call your server to finalize the transaction
+            onApprove: function (data, actions) {
+                return fetch('/demo/checkout/api/paypal/order/' + data.orderID + '/capture/', {
+                    method: 'post'
+                }).then(function (res) {
+                    return res.json();
+                }).then(function (orderData) {
+                    // Three cases to handle:
+                    //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
+                    //   (2) Other non-recoverable errors -> Show a failure message
+                    //   (3) Successful transaction -> Show confirmation or thank you
 
-              <label for="pay-form-inout-3">CCV</label>
-              <input title="ccv" type="text" name="" id="">
+                    // This example reads a v2/checkout/orders capture response, propagated from the server
+                    // You could use a different API or structure for your 'orderData'
+                    var errorDetail = Array.isArray(orderData.details) && orderData.details[0];
 
-            </div>
-          </div>
-          <div class="box box4">
-            <div class="inner-box1">
+                    if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED') {
+                        return actions.restart(); // Recoverable state, per:
+                        // https://developer.paypal.com/docs/checkout/integration-features/funding-failure/
+                    }
 
-              <input class="btn" type="submit" name="" id="" value="Pay Now">
-            </div>
-          </div>
-        </div>
-        <div class="paypal-form" data-aos="fade-up">
-          <h1>Your Payment Details</h1>
-          <div class="box box1">
-            <img src="./assets/images/img/paypal-credit-and-cards.png" alt="paypal">
-          </div>
+                    if (errorDetail) {
+                        var msg = 'Sorry, your transaction could not be processed.';
+                        if (errorDetail.description) msg += '\n\n' + errorDetail.description;
+                        if (orderData.debug_id) msg += ' (' + orderData.debug_id + ')';
+                        return alert(msg); // Show a failure message (try to avoid alerts in production environments)
+                    }
 
-          <div class="box box4">
-            <div class="inner-box1">
+                    // Successful capture! For demo purposes:
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                    var transaction = orderData.purchase_units[0].payments.captures[0];
+                    alert('Transaction ' + transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
 
-              <input class="btn" type="submit" name="" id="" value="Pay Now with Paypal">
-            </div>
-          </div>
-        </div>
+                    // Replace the above to show a success message within this page, e.g.
+                    // const element = document.getElementById('paypal-button-container');
+                    // element.innerHTML = '';
+                    // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                    // Or go to another URL:  actions.redirect('thank_you.html');
+                });
+            }
 
-      </div>
-    </div>
-  </section>
-
-
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="./assets/js/js/main.js"></script>
+        }).render('#paypal-button-container');
+    </script>
 </body>
 
 </html>

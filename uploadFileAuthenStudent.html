@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Document Upload</title>
   <style>
     .upload-container {
       background-color: #fff;
@@ -15,8 +14,7 @@
       margin: 30px auto;
     }
 
-    .upload-container h2,
-    .upload-container p {
+    .upload-container h2, .upload-container p {
       margin-top: 0;
     }
 
@@ -28,8 +26,7 @@
     }
 
     .file-upload input[type="file"] {
-      display: none;
-      /* Hide the default input */
+      display: none; /* Hide the default input */
     }
 
     .file-upload label {
@@ -46,13 +43,10 @@
     }
   </style>
 </head>
-
 <body>
   <div class="upload-container">
     <h2>Upload one of the following documents.</h2>
-    <p>Documents will be reviewed in a few minutes by staff at SheerID, a verification service provider. <a
-        href="#">Learn
-        more here.</a></p>
+    <p>Documents will be reviewed in a few minutes by staff at SheerID, a verification service provider. <a href="#">Learn more here.</a></p>
     <p>Upload your school-issued document that shows:</p>
     <ul>
       <li>Your full name</li>
@@ -65,14 +59,25 @@
       <li>Class schedule</li>
       <li>Tuition receipt</li>
     </ul>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form id="uploadForm" action="#" method="post" enctype="multipart/form-data">
       <div class="file-upload">
         <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png, .pdf, .gif, .bmp">
         <label for="file">Drag & drop your files here or <span>browse</span></label>
       </div>
+      <button type="button" onclick="checkFileAndRedirect()">Upload</button>
       <p>File must be .jpg, .jpeg, .png, .pdf, .gif, or .bmp</p>
     </form>
   </div>
+  <script>
+    function checkFileAndRedirect() {
+      const fileInput = document.getElementById('file');
+      if (fileInput.files.length > 0) {
+        // Simulate file verification (in reality, this should be done server-side)
+        window.location.href = '/paymentGateway.html'; // Redirect to the payment page with a discount
+      } else {
+        alert('Please select a file to upload.');
+      }
+    }
+  </script>
 </body>
-
 </html>
