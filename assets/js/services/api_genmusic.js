@@ -4,7 +4,7 @@ input.addEventListener("input", function () {
   console.log(input.value);
 });
 
-const baseUrl = `https://e21c-34-168-7-227.ngrok-free.app/musgen`;
+const baseUrl = `https://0b28-34-75-66-138.ngrok-free.app/musgen`;
 
 async function musicGen(payload) {
   const url = `${baseUrl}?prompt=${input.value}&duration=${20}`;
