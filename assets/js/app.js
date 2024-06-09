@@ -143,3 +143,6 @@ window.addEventListener("scroll", () => {
     navbarFixed.classList.remove("nav-fixed-active");
   }
 });
+
+
+
