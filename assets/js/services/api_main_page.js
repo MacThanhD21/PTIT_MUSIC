@@ -307,6 +307,7 @@ const app = {
               song.style.backgroundColor = color;
             };
           }
+          // 
           const audioElement = audio[index];
           const currentPlayingAudio = document.querySelector(".playing audio");
 

@@ -4,10 +4,10 @@ input.addEventListener("input", function () {
   console.log(input.value);
 });
 
-const baseUrl = `https://0b28-34-75-66-138.ngrok-free.app/musgen`;
+const baseUrl = `https://d269-34-168-58-45.ngrok-free.app/musgen`;
 
 async function musicGen(payload) {
-  const url = `${baseUrl}?prompt=${input.value}&duration=${20}`;
+  const url = `${baseUrl}?prompt=${input.value}&duration=${10}`;
   const response = await axios.post(url, payload, {
     headers: { "Content-Type": "application/json" },
   });
@@ -34,7 +34,7 @@ async function getMusic() {
       success.style.display = "block";
       warning.style.display = "none";
       loadingIndicator.style.display = "none";
-      console.log(audioData);
+      // console.log(audioData);
       setTimeout(() => {
         success.style.display = "none";
         success.style.transition = "all 0.3s ease";

@@ -13,6 +13,8 @@ const messages = {
 
 const signUpForm = document.getElementById("Sign__up");
 
+const backBtn = document.querySelector("#Sign__up .back-btn");
+
 signUpForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
@@ -38,7 +40,6 @@ signUpForm.addEventListener("submit", async function (event) {
     }
   } catch (error) {
     console.error("Error:", error);
-    alert(messages.signUpError);
   }
 });
 
